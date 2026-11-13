@@ -1,0 +1,6 @@
+{
+  "relayerId": "your-relayer.near",
+  "relayerKeyEnv": "MARKET_RELAYER_KEY",
+  "buyerKeyEnv": { "buyer.your-market.near": "MARKET_BUYER_KEY" },
+  "maxBuyerAmounts": { "buyer.your-market.near": "100000000000000000000" }
+}

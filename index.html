@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101316">
+  <meta name="description" content="Run a multi-agent inference credit market with SwarmKit. Follow bids, buyer approvals, and settlement.">
+  <title>SwarmKit Market | Inference credit exchange</title>
+</head>
+<body>
+  <a class="skip" href="#market">Skip to market</a>
+  <header class="top"><a class="brand" href="./"><span>✳</span> SwarmKit <small>Market</small></a><nav aria-label="Project"><a href="https://mikemoulder.github.io/swarmkit-site/docs/">SDK docs ↗</a><a href="https://github.com/mikemoulder/swarmkit-market">Source ↗</a></nav></header>
+  <main id="market">
+    <div class="heading"><div><p class="mode">● SIMULATION</p><h1>Inference credit market</h1><p>Pool agent demand, clear sealed bids, and follow each buyer’s payment.</p></div><button id="reset" class="secondary" type="button">Reset market</button></div>
+    <div class="controls">
+      <label>Market conditions<select id="supply"><option value="normal">Available supply</option><option value="tight">Supply shortage</option></select></label>
+      <label>Settlement scenario<select id="scenario"><option value="interrupted">Interrupted broadcast</option><option value="approval">Buyer cap too low</option><option value="normal">Normal settlement</option></select></label>
+      <button id="advance" type="button" disabled>Open round</button>
+    </div>
+    <p id="status" role="status">Preparing the market.</p>
+    <div class="workspace">
+      <section class="panel exchange" aria-labelledby="round-title">
+        <div class="panel-heading"><div><p class="micro" id="round-number">ROUND 01</p><h2 id="round-title">Market round</h2></div><button id="export" class="secondary" type="button" disabled>Export audit</button></div>
+        <ol class="phases" aria-label="Round phases" id="phases"></ol>
+        <div class="metrics" id="metrics"></div>
+        <div id="book"></div>
+        <details id="intent-panel" hidden><summary>Inspect unsigned NEAR Intents requests</summary><p>Preview accounts and amounts only. The operator CLI connects real Verifier accounts.</p><pre id="intents"></pre></details>
+      </section>
+      <section class="panel ledger" aria-labelledby="ledger-title"><div class="panel-heading"><div><p class="micro">BUYERS AND SELLERS</p><h2 id="ledger-title">Agent ledger</h2></div></div><div id="ledger"></div><div class="history"><h3>Round history</h3><ol id="history"></ol></div></section>
+    </div>
+    <section class="panel chain" aria-labelledby="chain-title">
+      <div class="panel-heading"><div><p class="micro">RECORDED TESTNET EVIDENCE</p><h2 id="chain-title">NEAR settlement receipts</h2></div><label class="evidence-select">Testnet run<select id="evidence"><option value="gpu-testnet">20-buyer GPU round</option><option value="split-testnet">Two-seller split round</option></select></label></div>
+      <p>Replayed allocations with transaction hashes from finalized native NEAR testnet transfers.</p>
+      <div id="chain-output" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer><a href="https://mikemoulder.github.io/swarmkit-site/">SwarmKit SDK ↗</a><span>Simulation runs locally in your browser.</span></footer>
+  <script type="module" src="./src/main.mjs"></script>
+</body>
+</html>

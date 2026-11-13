@@ -1,0 +1,111 @@
+{
+  "network": "testnet",
+  "sellerIds": [
+    "seller-1.swarmkit-2e68281bc969.testnet",
+    "seller-2.swarmkit-2e68281bc969.testnet"
+  ],
+  "transcript": {
+    "version": 1,
+    "spec": {
+      "id": "swarmkit-2e68281bc969.testnet",
+      "mechanismId": "cheapest-capacity-v1",
+      "resource": {
+        "label": "NVIDIA H100",
+        "unit": "GPU hour",
+        "deliveryWindow": "Next available 24-hour block"
+      },
+      "asset": "near:testnet:native",
+      "demandCloses": 10,
+      "commitCloses": 20,
+      "revealCloses": 30,
+      "buyers": [
+        "buyer-1.swarmkit-2e68281bc969.testnet"
+      ],
+      "sellers": [
+        "seller-1.swarmkit-2e68281bc969.testnet",
+        "seller-2.swarmkit-2e68281bc969.testnet"
+      ]
+    },
+    "events": [
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-1.swarmkit-2e68281bc969.testnet",
+        "request": {
+          "quantity": "5",
+          "budget": "1400000000000000000000"
+        }
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-1.swarmkit-2e68281bc969.testnet",
+        "hash": "8fb5587542af628293f07bd3994000f470179dffc0bf7f11f94e52d326a2776d"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-2.swarmkit-2e68281bc969.testnet",
+        "hash": "7ac3067fa13c17210d74976908526aea1383e75feb114510fc2bb0866aacd20e"
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-1.swarmkit-2e68281bc969.testnet",
+        "bid": {
+          "capacity": "3",
+          "unitPrice": "200000000000000000000",
+          "salt": "057096410b5d7aac09dab61ba9bbf4bea50c15057be902a09fefd57fc41464d2"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-2.swarmkit-2e68281bc969.testnet",
+        "bid": {
+          "capacity": "2",
+          "unitPrice": "400000000000000000000",
+          "salt": "2a25be09f8f22fd40b7dd9232ac1ec26bc15154d4482b64898bae507d2dc5eba"
+        }
+      }
+    ],
+    "observedAt": 30
+  },
+  "plan": {
+    "version": 2,
+    "roundId": "swarmkit-2e68281bc969.testnet",
+    "asset": "near:testnet:native",
+    "payments": [
+      {
+        "id": "[\"swarmkit-2e68281bc969.testnet\",\"buyer-1.swarmkit-2e68281bc969.testnet\",\"seller-1.swarmkit-2e68281bc969.testnet\"]",
+        "buyerId": "buyer-1.swarmkit-2e68281bc969.testnet",
+        "sellerId": "seller-1.swarmkit-2e68281bc969.testnet",
+        "amount": "600000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-2e68281bc969.testnet\",\"buyer-1.swarmkit-2e68281bc969.testnet\",\"seller-2.swarmkit-2e68281bc969.testnet\"]",
+        "buyerId": "buyer-1.swarmkit-2e68281bc969.testnet",
+        "sellerId": "seller-2.swarmkit-2e68281bc969.testnet",
+        "amount": "800000000000000000000"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "paymentId": "[\"swarmkit-2e68281bc969.testnet\",\"buyer-1.swarmkit-2e68281bc969.testnet\",\"seller-1.swarmkit-2e68281bc969.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "AWmQ6oU7nuH1R24R6naPgVzLakArLgnrrZeQnirKkQ6W"
+    },
+    {
+      "paymentId": "[\"swarmkit-2e68281bc969.testnet\",\"buyer-1.swarmkit-2e68281bc969.testnet\",\"seller-2.swarmkit-2e68281bc969.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "4iRnp5cBHjffijTrEUMqB5uVA4hK7KJdhx3uLF82dZxD"
+    }
+  ],
+  "summary": {
+    "pending": "0",
+    "confirmed": "1400000000000000000000",
+    "failed": "0",
+    "paid": true
+  }
+}

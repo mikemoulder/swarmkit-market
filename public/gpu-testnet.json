@@ -1,0 +1,546 @@
+{
+  "network": "testnet",
+  "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+  "transcript": {
+    "version": 1,
+    "spec": {
+      "id": "swarmkit-1bce0a3e8783.testnet",
+      "resource": {
+        "label": "NVIDIA H100",
+        "unit": "GPU hour",
+        "deliveryWindow": "Next available 24-hour block"
+      },
+      "asset": "near:testnet:native",
+      "demandCloses": 10,
+      "commitCloses": 20,
+      "revealCloses": 30,
+      "buyers": [
+        "buyer-1.swarmkit-1bce0a3e8783.testnet",
+        "buyer-2.swarmkit-1bce0a3e8783.testnet",
+        "buyer-3.swarmkit-1bce0a3e8783.testnet",
+        "buyer-4.swarmkit-1bce0a3e8783.testnet",
+        "buyer-5.swarmkit-1bce0a3e8783.testnet",
+        "buyer-6.swarmkit-1bce0a3e8783.testnet",
+        "buyer-7.swarmkit-1bce0a3e8783.testnet",
+        "buyer-8.swarmkit-1bce0a3e8783.testnet",
+        "buyer-9.swarmkit-1bce0a3e8783.testnet",
+        "buyer-10.swarmkit-1bce0a3e8783.testnet",
+        "buyer-11.swarmkit-1bce0a3e8783.testnet",
+        "buyer-12.swarmkit-1bce0a3e8783.testnet",
+        "buyer-13.swarmkit-1bce0a3e8783.testnet",
+        "buyer-14.swarmkit-1bce0a3e8783.testnet",
+        "buyer-15.swarmkit-1bce0a3e8783.testnet",
+        "buyer-16.swarmkit-1bce0a3e8783.testnet",
+        "buyer-17.swarmkit-1bce0a3e8783.testnet",
+        "buyer-18.swarmkit-1bce0a3e8783.testnet",
+        "buyer-19.swarmkit-1bce0a3e8783.testnet",
+        "buyer-20.swarmkit-1bce0a3e8783.testnet"
+      ],
+      "sellers": [
+        "seller-1.swarmkit-1bce0a3e8783.testnet",
+        "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "seller-3.swarmkit-1bce0a3e8783.testnet",
+        "seller-4.swarmkit-1bce0a3e8783.testnet",
+        "seller-5.swarmkit-1bce0a3e8783.testnet"
+      ]
+    },
+    "events": [
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-1.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "2",
+          "budget": "1400000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-2.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "5",
+          "budget": "3500000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-3.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "4",
+          "budget": "2800000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-4.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "7",
+          "budget": "4900000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-5.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "6",
+          "budget": "4200000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-6.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "1",
+          "budget": "700000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-7.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "8",
+          "budget": "5600000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-8.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "3",
+          "budget": "2100000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-9.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "2",
+          "budget": "1400000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-10.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "5",
+          "budget": "3500000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-11.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "4",
+          "budget": "2800000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-12.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "7",
+          "budget": "4900000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-13.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "6",
+          "budget": "4200000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-14.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "1",
+          "budget": "700000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-15.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "8",
+          "budget": "5600000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-16.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "3",
+          "budget": "2100000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-17.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "2",
+          "budget": "1400000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-18.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "5",
+          "budget": "3500000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-19.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "4",
+          "budget": "2800000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "buyer-20.swarmkit-1bce0a3e8783.testnet",
+        "request": {
+          "quantity": "7",
+          "budget": "4900000000000000000000"
+        }
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-1.swarmkit-1bce0a3e8783.testnet",
+        "hash": "1481a261a70df9dffa8c597d70b39f0da0e24b38d062e90d866f878607c892a9"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "hash": "d71099b2686aaa8d9a8d977345ca8cc4f9522942d12842166c000bb996c6e3dc"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-3.swarmkit-1bce0a3e8783.testnet",
+        "hash": "c32956880a3b8bba5743ec17c0bb0ef687c3bb705346d539bba737be15d1be07"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-4.swarmkit-1bce0a3e8783.testnet",
+        "hash": "2536ea45ada893b86b167bdd148c63f15f9ad7c074de1fb42edc3185f5c83c6e"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "seller-5.swarmkit-1bce0a3e8783.testnet",
+        "hash": "b47a4a99c74a8e0d6a74f95a3f9bdca4d287a854cdae7bbcf5f4b8f9d2209a67"
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-1.swarmkit-1bce0a3e8783.testnet",
+        "bid": {
+          "capacity": "89",
+          "unitPrice": "200000000000000000000",
+          "salt": "aac61e95d53adef04aafe58f87cb95a2dc3618995fec292438556233b4e041f6"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "bid": {
+          "capacity": "90",
+          "unitPrice": "400000000000000000000",
+          "salt": "372050ddcee01c98d40cf7174cc9a98a0ab38b61ed8ead4c1226083b1d67e05e"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-3.swarmkit-1bce0a3e8783.testnet",
+        "bid": {
+          "capacity": "90",
+          "unitPrice": "600000000000000000000",
+          "salt": "0748cc258c150f403ad4399f68b23a7245e7572978e9b67450536f436c8b4bc6"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-4.swarmkit-1bce0a3e8783.testnet",
+        "bid": {
+          "capacity": "90",
+          "unitPrice": "800000000000000000000",
+          "salt": "a608b06d5bd056e8654bcd279dd4e85ac59c9bf1e60de49cc775b74b2ac4242e"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "seller-5.swarmkit-1bce0a3e8783.testnet",
+        "bid": {
+          "capacity": "90",
+          "unitPrice": "1000000000000000000000",
+          "salt": "174d1db50bdc9390227dd1af98755342db0279b93b1fd7c4ff2900538fc00996"
+        }
+      }
+    ],
+    "observedAt": 30
+  },
+  "plan": {
+    "version": 1,
+    "roundId": "swarmkit-1bce0a3e8783.testnet",
+    "asset": "near:testnet:native",
+    "payments": [
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-1.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-1.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "800000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-2.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-2.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2000000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-3.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-3.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "1600000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-4.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-4.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2800000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-5.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-5.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2400000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-6.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-6.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "400000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-7.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-7.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "3200000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-8.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-8.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "1200000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-9.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-9.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "800000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-10.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-10.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2000000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-11.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-11.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "1600000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-12.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-12.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2800000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-13.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-13.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2400000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-14.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-14.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "400000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-15.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-15.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "3200000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-16.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-16.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "1200000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-17.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-17.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "800000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-18.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-18.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2000000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-19.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-19.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "1600000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-20.swarmkit-1bce0a3e8783.testnet\"]",
+        "buyerId": "buyer-20.swarmkit-1bce0a3e8783.testnet",
+        "sellerId": "seller-2.swarmkit-1bce0a3e8783.testnet",
+        "amount": "2800000000000000000000"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-1.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "BYTgxFHqxjzML5zQWreKyMRyZHW1WCryDJiRVDQHvhLo"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-2.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "2ijyKDqYhrL4dFDjrVMybR8eDdkS9iP2qqnc6r5MrkkQ"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-3.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "8yo5WeLKJA8KG3nU4Y2XiiPx1jLPRbaVbkkPoAchh7An"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-4.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "Gm2A4zCVx3PZXzK2gHZxDJpwRH2nHU2rx9AsZJdV1nSJ"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-5.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "EeQDUyxwFhLp3fxDn8KFnBi84AaN5Djv6NB6h3qPEiN"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-6.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "GsgLad4buo9Sx9hodQr3fd781r6hDSuFNbkgHheWnu8d"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-7.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "HFCKAWDpGGavisdk1eK9U5uFKQp41mjZhMN1StmDMSa"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-8.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "HVUy9HAqLmqB4AgHnsZbDBmcSzdR4BV3F8cS9rmfGus"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-9.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "DwWSk21odNgPxTRghb4ojD3a7NaD4vDGnB5jTw24Zf8m"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-10.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "2ZDbGjTK4GScDrBeFAgvLLJYoyoUw4AgrBLSRDSMXqrP"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-11.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "833Vt1W6vJJ3kWpE4K3yZwaaBP2hPwiT22C4PJQPRaj9"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-12.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "HNe1C9fZAjg9qA62AXCJa4Jqn1HDqohnLzUudsQo1thY"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-13.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "4VpwC5FngJk6Mbike6his5ppGZ6X7sRwF7mjyYqZT43N"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-14.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "9MvgzwPd3kHL1bjRzbbuKp29gQJgzCFr3svKpwcyYZUn"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-15.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "5YgmXPQHKhW1ZcCLiSNiv4Hrfz8rEZvyqUknDw9Zfami"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-16.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "BH7nP8Z4FgjWVov8otkYCjDJRixrdKbp524gNp7tKh8g"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-17.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "47RbSmMsG1z77G86TxgZXP9jGq5XEqgkkpQQJCd3WvGe"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-18.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "BMpNsGqXZYQDTUTEE343BrmwjaWYbJC1z7mwxxghH3py"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-19.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "HpERSLAj2HCeiVHYHdmCHoXRd3f5SyZwcaW45wLdxMG7"
+    },
+    {
+      "paymentId": "[\"swarmkit-1bce0a3e8783.testnet\",\"buyer-20.swarmkit-1bce0a3e8783.testnet\"]",
+      "status": "confirmed",
+      "transactionHash": "9DehoHwoMwF5UnCwrbk83C6C6Pcew15e1KLcV8ZvfUPe"
+    }
+  ],
+  "summary": {
+    "pending": "0",
+    "confirmed": "36000000000000000000000",
+    "failed": "0",
+    "paid": true
+  }
+}
