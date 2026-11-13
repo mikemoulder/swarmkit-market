@@ -18,6 +18,8 @@ npm run dev
 
 The lockfile pins the SDK tarball in `vendor/`. It is the compiled package from the core repository. The market never imports from the core source tree. The Vite build emits a static site in `dist/`.
 
+GitHub Pages serves the built files from the `gh-pages` branch. Run the tests and build before updating that branch.
+
 ## Follow the money
 
 1. Seal and reveal the offers. The allocation draws from Fastlane and Northstar.
