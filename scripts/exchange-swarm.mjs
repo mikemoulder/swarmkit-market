@@ -21,7 +21,7 @@ const TGAS = 1_000_000_000_000n;
 const NEAR = 10n ** 24n;
 const MILLI = 10n ** 21n; // 0.001 wNEAR: the price unit
 const BOND = 50n * MILLI;
-const PHASE_MS = { demand: 75_000, commit: 45_000, reveal: 45_000, delivery: 120_000 };
+const PHASE_MS = { demand: 75_000, commit: 45_000, reveal: 45_000, delivery: 180_000 };
 const sha = (text) => createHash("sha256").update(text).digest("hex");
 const sleepUntil = async (ns) => { const ms = Number(BigInt(ns) / 1_000_000n) - Date.now() + 2500; if (ms > 0) await new Promise((r) => setTimeout(r, ms)); };
 
@@ -44,13 +44,21 @@ const faucet = await fetch("https://helper.testnet.near.org/account", {
 assert.ok(faucet.ok, `faucet HTTP ${faucet.status}`);
 await new Promise((r) => setTimeout(r, 3000));
 const parent = new Account(parentId, provider, parentKey.toString());
+// Testnet-only keys, kept in git-ignored .market so an interrupted run can be finished by hand.
+const keyFile = `.market/exchange/${parentId}.json`;
+const savedKeys = { [parentId]: parentKey.toString() };
+await mkdir('.market/exchange', { recursive: true });
+const saveKeys = () => writeFile(keyFile, JSON.stringify(savedKeys, null, 2), { mode: 0o600 });
+await saveKeys();
 async function sub(label, near) {
   const key = KeyPair.fromRandom("ed25519");
   const id = `${label}.${parentId}`;
+  savedKeys[id] = key.toString();
+  await saveKeys();
   record("create-account", id, await parent.createSubAccount({ accountOrPrefix: id, publicKey: key.getPublicKey().toString(), nearToTransfer: near }));
   return new Account(id, provider, key.toString());
 }
-const exchange = await sub("exchange", 2n * NEAR);
+const exchange = await sub("exchange", 4n * NEAR);
 const buyerPlans = [
   ["buyer-1", 4, 9], ["buyer-2", 3, 7], ["buyer-3", 2, 10], ["buyer-4", 5, 8], ["buyer-5", 1, 12],
   ["buyer-6", 3, 9], ["buyer-7", 2, 6], ["buyer-8", 4, 11], ["buyer-9", 2, 8], ["buyer-10", 3, 10],
@@ -64,9 +72,9 @@ const sellerPlans = [
   ["seller-5", 30, 9, 15, "honest"],
 ];
 const buyers = [];
-for (const [label] of buyerPlans) buyers.push(await sub(label, 3n * NEAR / 10n));
+for (const [label] of buyerPlans) buyers.push(await sub(label, 15n * NEAR / 100n));
 const sellers = [];
-for (const [label] of sellerPlans) sellers.push(await sub(label, 3n * NEAR / 10n));
+for (const [label] of sellerPlans) sellers.push(await sub(label, 15n * NEAR / 100n));
 
 // 2. Deploy, init, register storage on wNEAR, and fund buyers with wNEAR.
 record("deploy", exchange.accountId, await exchange.deployContract(wasm), { wasmSha256: sha(wasm) });
@@ -154,13 +162,17 @@ for (const line of round.lines) {
   const plan = sellerPlans[sellers.findIndex((s) => s.accountId === line.seller)];
   const units = plan[4] === "short" ? Math.floor(Number(line.quantity) / 2) : Number(line.quantity);
   const buyer = buyers.find((b) => b.accountId === line.buyer);
+  if (!units) { evidence.steps.push({ step: "no-delivery", who: line.seller, buyer: line.buyer }); continue; }
+  const served = [];
   for (let unit = 0; unit < units; unit++) {
-    const served = await serve(line.buyer, `In one sentence, why do AI agents pool demand? (${line.buyer} unit ${unit + 1})`);
-    record("confirm-delivery", line.buyer, await call(buyer, exchange.accountId, "confirm_delivery", {
-      round_id: String(roundId), seller: line.seller, units: "1", receipt: served.receipt,
-    }), { seller: line.seller, receipt: served.receipt, completionId: served.completionId, simulated: served.simulated });
-    deliveries.push({ ...served, buyer: line.buyer, seller: line.seller });
+    served.push(await serve(line.buyer, `In one sentence, why do AI agents pool demand? (${line.buyer} unit ${unit + 1})`));
   }
+  // One confirmation per line: the receipt commits to every unit's receipt, in order.
+  const receipt = sha(JSON.stringify(served.map((s) => s.receipt)));
+  record("confirm-delivery", line.buyer, await call(buyer, exchange.accountId, "confirm_delivery", {
+    round_id: String(roundId), seller: line.seller, units: String(units), receipt,
+  }), { seller: line.seller, units, of: line.quantity, receipt, unitReceipts: served.map((s) => s.receipt) });
+  for (const s of served) deliveries.push({ ...s, buyer: line.buyer, seller: line.seller });
 }
 
 // 9. Finalize after the delivery deadline: refunds for undelivered units, bonds back or slashed.
