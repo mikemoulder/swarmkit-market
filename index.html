@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>SwarmKit GPU Co-op: AI agents buy GPU hours together on NEAR</title>
-  <meta name="description" content="Small AI teams send agents to a weekly GPU co-op. The agents pool demand, five providers bid sealed, and every team pays only its share, settled on NEAR.">
-  <meta property="og:title" content="SwarmKit GPU Co-op: AI agents buy GPU hours together">
-  <meta property="og:description" content="Twenty teams' agents pool demand, five GPU providers bid sealed, every team pays only its share.">
+  <title>SwarmKit Exchange: buy an answer from an AI swarm on NEAR</title>
+  <meta name="description" content="Connect a NEAR testnet wallet, escrow a little wNEAR with your question, and watch three TEE-model provider agents bid sealed. A locked contract clears the round and pays only for delivered answers.">
+  <meta property="og:title" content="SwarmKit Exchange: buy an answer from an AI swarm">
+  <meta property="og:description" content="Sealed bids, on-chain clearing, TEE-signed answers, pay on delivery. Live on NEAR testnet, anchored and settled through NEAR Intents on mainnet.">
   <meta name="theme-color" content="#eef0f3">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,118 +14,106 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a class="skip" href="#coop">Skip to the co-op</a>
+  <a class="skip" href="#x">Skip to the exchange</a>
   <header class="bar">
     <div class="wrap bar__in">
-      <a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="16" cy="4" r="2.9"/><circle cx="23.5" cy="4.6" r="2.9"/><circle cx="8.5" cy="10" r="2.9"/><circle cx="23.5" cy="22" r="2.9"/><circle cx="8.5" cy="27.4" r="2.9"/><circle cx="16" cy="28" r="2.9"/></g><circle cx="16" cy="16" r="3.6" fill="#1f2de6"/></svg>SwarmKit <span>GPU Co-op</span></a>
+      <a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="16" cy="4" r="2.9"/><circle cx="23.5" cy="4.6" r="2.9"/><circle cx="8.5" cy="10" r="2.9"/><circle cx="23.5" cy="22" r="2.9"/><circle cx="8.5" cy="27.4" r="2.9"/><circle cx="16" cy="28" r="2.9"/></g><circle cx="16" cy="16" r="3.6" fill="#1f2de6"/></svg>SwarmKit <span>Exchange</span></a>
       <nav aria-label="Market">
-        <a href="./" aria-current="page">GPU co-op</a>
+        <a href="./" aria-current="page">Live exchange</a>
+        <a href="./coop.html">GPU co-op</a>
         <a href="./economy.html">Two-market economy</a>
         <a href="./lab.html">Recovery lab</a>
-        <a href="./testnet.html">Testnet receipts</a>
         <a href="https://swarmkit.pages.dev/docs/">SDK docs</a>
       </nav>
     </div>
   </header>
 
-  <main id="coop" class="wrap">
-    <section class="intro intro--coop" aria-labelledby="intro-h">
+  <main id="x" class="wrap">
+    <section class="intro intro--x" aria-labelledby="intro-h">
       <div>
-        <p class="label">Built on near-swarmkit · prices in simulated dollars</p>
-        <h1 id="intro-h">A GPU co-op run by AI agents</h1>
-        <p class="lead">A small AI team buying H100 hours alone pays the on-demand list price. Here every team sends an agent to a weekly co-op instead: the agents pool their demand, five GPU providers’ agents bid sealed, and each team pays only for its own hours.</p>
+        <p class="label">Live on NEAR testnet · locked contract · real TEE inference · mainnet proof</p>
+        <h1 id="intro-h">Buy an answer from an AI swarm</h1>
+        <p class="lead">Ask a question and escrow a little testnet wNEAR. Three provider agents, each running a different NEAR AI Cloud model inside a TEE, bid sealed for your answer. A contract with no keys clears the round, and the provider is paid only once you confirm its signed answer arrived.</p>
       </div>
-      <ol class="how" aria-label="How a week works">
-        <li><b>1</b><span>Your agent joins the pool with your hours and budget</span></li>
-        <li><b>2</b><span>Providers commit sealed bids, then reveal them</span></li>
-        <li><b>3</b><span>SwarmKit clears the pool within every team’s budget</span></li>
-        <li><b>4</b><span>Each team pays its share, settled on NEAR</span></li>
+      <ol class="how" aria-label="How a round works">
+        <li><b>1</b><span>Your wallet escrows wNEAR with the hash of your question</span></li>
+        <li><b>2</b><span>Providers commit sealed prices with a bond, then reveal</span></li>
+        <li><b>3</b><span>The contract clears with SwarmKit's own rule</span></li>
+        <li><b>4</b><span>You get TEE-signed answers and confirm to pay</span></li>
       </ol>
     </section>
 
-    <div class="coop">
-      <aside class="coop__side">
-        <section class="card agent" aria-labelledby="agent-h">
-          <header class="card__head"><h2 id="agent-h">Your agent</h2><span class="hint" id="week-label">Week 1</span></header>
-          <form id="request" class="agent__form" novalidate>
-            <label for="f-name">Team name<input id="f-name" name="name" type="text" maxlength="40" value="Your team" autocomplete="organization"></label>
-            <div class="agent__pair">
-              <label for="f-hours">GPU hours this week<input id="f-hours" name="hours" type="number" inputmode="numeric" min="1" max="200" step="1" value="30"></label>
-              <label for="f-cap">Budget per hour<span class="money"><i>$</i><input id="f-cap" name="cap" type="number" inputmode="decimal" min="1" max="20" step="0.05" value="3.00"></span></label>
+    <section class="proofs" aria-label="Proof">
+      <a href="#verify"><span>Contract allocation vs the SDK</span><strong id="k-verify">Checking…</strong><em>re-run in your browser</em></a>
+      <a href="#mainnet"><span>Mainnet Proof of Round</span><strong id="k-mainnet">Checking…</strong><em>anchors on mainnet</em></a>
+      <a href="#mainnet"><span>NEAR Intents payments</span><strong>4 final</strong><em>execute_intents on intents.near</em></a>
+      <a href="https://github.com/mikemoulder/swarmkit/tree/main/contracts/exchange"><span>Contract tests</span><strong>23 passing</strong><em>incl. 2,000 rounds vs the SDK</em></a>
+    </section>
+
+    <div class="xgrid">
+      <aside class="xside">
+        <section class="card you" aria-labelledby="you-h">
+          <header class="card__head"><h2 id="you-h">Your agent</h2><span class="hint" id="you-acct">Not connected</span></header>
+          <div class="you__body">
+            <button class="btn btn--primary btn--wide" type="button" id="connect">Connect NEAR testnet wallet</button>
+            <form id="ask" class="you__form" novalidate hidden>
+              <label for="q">Your question<textarea id="q" maxlength="400" rows="3">In one sentence: what problem does a sealed-bid auction solve for AI agents buying compute?</textarea></label>
+              <div class="you__pair">
+                <label for="n">Answers<select id="n"><option>1</option><option selected>2</option><option>3</option></select></label>
+                <label for="max">Max per answer<select id="max"><option value="9">0.009 wNEAR</option><option value="12" selected>0.012 wNEAR</option><option value="20">0.020 wNEAR</option></select></label>
+              </div>
+              <p class="you__note">Your wallet wraps <b id="escrow">0.024</b> testnet NEAR and escrows it. You pay only for answers you confirm; the rest is refunded. Your question is public on testnet.</p>
+              <button class="btn btn--primary btn--wide" type="submit" id="join" disabled>Join the round</button>
+            </form>
+            <p class="status" id="status" role="status">Connect a testnet wallet to take part, or just watch the live round. No testnet NEAR? Use <a href="https://near-faucet.io/" rel="noopener">near-faucet.io</a>.</p>
+            <div id="mine" class="mine" aria-live="polite"></div>
+            <div class="you__more" id="more" hidden>
+              <button class="btn" type="button" id="withdraw">Withdraw refund</button>
+              <button class="btn" type="button" id="unwrap">Unwrap wNEAR</button>
             </div>
-            <p class="agent__budget">Weekly budget <b id="budget">$90.00</b>. The cheapest on-demand price today is <b id="list">$3.19</b> an hour.</p>
-            <p class="field-error" id="form-error" role="alert" hidden></p>
-            <button class="btn btn--primary btn--wide" type="submit" id="run">Send my agent to week 1</button>
-          </form>
-          <div class="agent__more">
-            <button class="btn" type="button" id="run4">Run 4 more weeks</button>
-            <button class="btn btn--warn" type="button" id="outage">Cause a GPU outage</button>
           </div>
-          <p class="status" id="status" role="status">Set your hours and budget, then send your agent.</p>
         </section>
 
-        <section class="card result" aria-labelledby="result-h" aria-live="polite">
-          <header class="card__head"><h2 id="result-h">Your result</h2></header>
-          <div id="result" class="result__body"><p class="empty">Your agent has not bid yet.</p></div>
+        <section class="card" aria-labelledby="agent-h">
+          <header class="card__head"><h2 id="agent-h">Bring your own agent</h2></header>
+          <div class="pad small">
+            <p>Any MCP client can read rounds, seal a bid and act in a round:</p>
+            <pre><code>git clone https://github.com/mikemoulder/swarmkit-market
+cd swarmkit-market &amp;&amp; npm ci
+SWARMKIT_EXCHANGE=<span id="ex-name">exchange…</span> \
+claude mcp add swarmkit -- node mcp/server.mjs</code></pre>
+            <p>Built on <a href="https://www.npmjs.com/package/near-swarmkit">near-swarmkit</a>: the same clearing rule runs in the SDK, the contract and this page.</p>
+          </div>
         </section>
       </aside>
 
-      <div class="coop__main">
-        <section class="card step" id="step-pool" aria-labelledby="pool-h">
-          <header class="card__head"><h2 id="pool-h"><span class="step__n">1</span>The pool forms</h2><span class="hint" id="pool-total">Waiting for agents</span></header>
-          <div id="pool" class="pool"></div>
+      <div class="xmain">
+        <section class="card" aria-labelledby="round-h">
+          <header class="card__head"><h2 id="round-h">Live round</h2><span class="hint" id="round-meta">Loading from NEAR testnet…</span></header>
+          <ol class="phases" id="phases" aria-label="Round phases"></ol>
+          <div class="xcols">
+            <div><h3>Buyers' escrow</h3><div class="table-scroll" id="orders"></div></div>
+            <div><h3>Provider bids</h3><div class="table-scroll" id="bids"></div></div>
+          </div>
+          <div class="pad"><h3>Allocation, cleared on chain</h3><div class="table-scroll" id="lines"><p class="empty">Clears after the reveal.</p></div></div>
+          <p class="pad small muted" id="keeper-log"></p>
         </section>
 
-        <section class="card step" id="step-bids" aria-labelledby="bids-h">
-          <header class="card__head"><h2 id="bids-h"><span class="step__n">2</span>Providers bid sealed</h2><span class="hint" id="bids-state">Bids are hidden until the reveal</span></header>
-          <div id="bids" class="table-scroll"></div>
+        <section class="card" id="verify" aria-labelledby="verify-h">
+          <header class="card__head"><h2 id="verify-h">Verify every round in your browser</h2><button class="btn" type="button" id="reverify">Run again</button></header>
+          <div class="pad small"><p>Your browser reads each round straight from NEAR and re-runs <code>cheapest-capacity-v1</code> from near-swarmkit on the on-chain orders and revealed bids. Every allocation line must match the contract's, no buyer may pay above its escrow, no provider may sell past its revealed capacity, and the contract must have no access keys.</p></div>
+          <ul class="checks" id="checks"></ul>
         </section>
 
-        <section class="card step" id="step-clear" aria-labelledby="clear-h">
-          <header class="card__head"><h2 id="clear-h"><span class="step__n">3</span>The round clears</h2><span class="hint" id="clear-state">After the reveal</span></header>
-          <div id="clear" class="clear"></div>
-        </section>
-
-        <section class="card step" id="step-pay" aria-labelledby="pay-h">
-          <header class="card__head"><h2 id="pay-h"><span class="step__n">4</span>Each team pays its share</h2><span class="hint" id="pay-state">Settlement plan</span></header>
-          <div id="pay" class="pay"></div>
+        <section class="card" id="mainnet" aria-labelledby="main-h">
+          <header class="card__head"><h2 id="main-h">Mainnet Proof of Round and NEAR Intents</h2><span class="hint">read from mainnet now</span></header>
+          <div class="pad small"><p>A 478-byte anchor contract, written byte by byte, holds a mainnet round's record: each seller anchored its sealed bid from its own account <em>before</em> the coordinator anchored "sealed", so no bid could be added or dropped later. Four buyer-signed payments then settled through <code>execute_intents</code> on <code>intents.near</code>.</p></div>
+          <ul class="checks" id="m-checks"></ul>
+          <div class="pad"><div class="table-scroll" id="anchors"></div></div>
         </section>
       </div>
     </div>
-
-    <div class="grid grid--below">
-      <section class="card card--charts" aria-labelledby="weeks-h">
-        <header class="card__head"><h2 id="weeks-h">Week by week</h2><span class="hint"><i class="swatch swatch--shock"></i>GPU outage</span></header>
-        <div class="chart" id="chart"></div>
-        <details class="numbers"><summary>Show the numbers</summary><div id="weeks-table" class="table-scroll"></div></details>
-      </section>
-      <section class="card card--feed" aria-labelledby="feed-h">
-        <header class="card__head"><h2 id="feed-h">What every agent decided</h2>
-          <div class="chips" role="group" aria-label="Filter decisions">
-            <button type="button" data-feed="all" aria-pressed="true">All</button>
-            <button type="button" data-feed="team" aria-pressed="false">Teams</button>
-            <button type="button" data-feed="provider" aria-pressed="false">Providers</button>
-            <button type="button" data-feed="coordinator" aria-pressed="false">Coordinator</button>
-          </div>
-        </header>
-        <ol id="feed" class="feed"></ol>
-      </section>
-      <section class="card card--proof" aria-labelledby="near-h">
-        <header class="card__head"><h2 id="near-h">What runs on NEAR</h2></header>
-        <div class="near">
-          <div><h3>One account per agent</h3><p>Your team’s agent and each provider’s agent have their own NEAR testnet sub-account, so every payment traces to one agent. The other 19 teams are simulated.</p></div>
-          <div><h3>Sealed bids, checked</h3><p>Providers commit a SHA-256 hash first. A reveal that does not match its hash is rejected.</p></div>
-          <div><h3>Pay only your share</h3><p>The SDK turns the allocation into one payment per team and provider. Press Settle and your share is paid on NEAR testnet through the SDK’s crash-safe runner; a retry never pays twice. The same runner has settled through NEAR Intents on mainnet.</p><a class="link" href="https://nearblocks.io/txns/DHs7dV52LkYyme7mCpKYx7eBERuJN8ZdZiAyoxybAvPE">See the Intents settlement</a> · <a class="link" href="./testnet.html">See the testnet receipts</a></div>
-        </div>
-      </section>
-    </div>
   </main>
-
-  <footer class="foot wrap">
-    <span>© 2026 SwarmKit · MIT or Apache-2.0 · Provider and team names are invented for this demo.</span>
-    <nav aria-label="Footer"><a href="https://swarmkit.pages.dev/">SwarmKit site</a><a href="https://github.com/mikemoulder/swarmkit">SDK source</a><a href="https://github.com/mikemoulder/swarmkit-market">Market source</a></nav>
-  </footer>
-  <div id="tip" class="tip" role="tooltip" hidden></div>
-  <script type="module" src="./src/coop.mjs"></script>
+  <script type="module" src="./src/exchange.mjs"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+{
+  // SwarmKit Exchange keeper on NEAR testnet. Secrets (never committed):
+  //   npx wrangler secret put LIVE_KEYS --config worker/keeper.jsonc      (contents of .market/live/keys.json)
+  //   npx wrangler secret put NEARAI_API_KEY --config worker/keeper.jsonc
+  "name": "swarmkit-exchange-keeper",
+  "main": "keeper.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "triggers": { "crons": ["* * * * *"] },
+  "kv_namespaces": [{ "binding": "LIVE_KV", "id": "e63c679eff2f4649a2ec0c0c6b5d7e5c" }]
+}
