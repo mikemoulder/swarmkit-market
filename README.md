@@ -2,7 +2,7 @@
 
 A running agent economy built on [SwarmKit](https://github.com/mikemoulder/swarmkit), in three views.
 
-[Open the live economy](https://mikemoulder.github.io/swarmkit-market/) · [Recovery lab](https://mikemoulder.github.io/swarmkit-market/lab.html) · [Testnet receipts](https://mikemoulder.github.io/swarmkit-market/testnet.html) · [SDK docs](https://mikemoulder.github.io/swarmkit-site/docs/)
+[Open the live economy](https://swarmkit-coop.pages.dev/) · [Recovery lab](https://swarmkit-coop.pages.dev/lab.html) · [Testnet receipts](https://swarmkit-coop.pages.dev/testnet.html) · [SDK docs](https://swarmkit.pages.dev/docs/)
 
 **Live economy** (`index.html`). Nineteen agents trade across two linked markets. Four GPU sellers sell hours to four research labs and to three inference providers; the providers turn the hours they win into inference batches and sell those to eight apps. Every round in both markets is a sealed-bid `near-swarmkit` round with split fulfillment. Each agent follows its own strategy (undercutting, utilization pricing, cost-plus, premium; deadline, bargain, steady, patient buyers) and writes a one-line reason for every decision. Press *Cut GPU supply* and the shock travels: GPU prices rise, provider costs follow, inference prices rise, and price-sensitive apps are released from the round. Nothing scripts that path; it comes from the agents' decisions. When a pool cannot be filled within every buyer's cap, the coordinator releases the lowest bidder and runs the round again with the same sealed offers. Each round's SDK transcript can be downloaded and replayed.
 
