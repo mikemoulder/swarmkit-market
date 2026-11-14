@@ -161,7 +161,7 @@ function renderPay(r) {
   const sorted = [...r.payments].sort((a, b) => (b.buyerId === YOU) - (a.buyerId === YOU));
   const rows = sorted.map(p => `<tr class="${p.buyerId === YOU ? 'is-you' : ''}"><th scope="row">${esc(label(p.buyerId))}</th><td>${esc(label(p.sellerId))}</td><td class="num">${usd(p.amount)}</td><td class="mono">${esc(p.buyerId)}.coop.testnet</td></tr>`).join('');
   const settle = SETTLE_URL
-    ? '<button class="btn btn--primary" type="button" id="settle">Settle my share on NEAR testnet</button><p class="pay__note" id="settle-note"></p>'
+    ? '<button class="btn btn--primary" type="button" id="settle">Settle my share on NEAR testnet</button><p class="pay__note" id="settle-note">Pays your share from your team’s agent account to each provider’s on NEAR testnet. $1.00 here settles as 0.0001 testnet NEAR.</p>'
     : `<p class="pay__note">On this page the plan is settled in simulated dollars. The same SDK settlement flow paid all 20 shares of a 20-buyer GPU round on NEAR testnet, each one checked against RPC. <a class="link" href="./testnet.html">See those receipts</a></p>`;
   $('pay').innerHTML = `<p class="pay__lead"><b>${r.payments.length} payments</b>, one per team and provider pair, ${usd(r.total)} in total. Nobody pays for anyone else’s hours.</p>
     <div class="table-scroll pay__table"><table><thead><tr><th scope="col">Team</th><th scope="col">Pays provider</th><th scope="col" class="num">Amount</th><th scope="col">Agent account</th></tr></thead><tbody>${rows}</tbody></table></div>
@@ -175,18 +175,40 @@ function renderPay(r) {
   $('settle')?.addEventListener('click', () => settleShare(r));
 }
 
-async function settleShare(r) {
-  const mine = r.payments.find(p => p.buyerId === YOU), note = $('settle-note'), button = $('settle');
-  if (!mine) { note.textContent = 'Your team has no payment in this round.'; return; }
-  button.disabled = true; note.textContent = 'Signing and sending your share on NEAR testnet…';
+function clientId() {
   try {
-    const response = await fetch(SETTLE_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ roundId: r.roundId, payment: mine }) });
-    const body = await response.json();
-    if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
-    note.innerHTML = `Final on NEAR testnet: ${esc(body.amountNear)} NEAR from ${esc(body.from)} to ${esc(body.to)}. <a class="link" href="https://testnet.nearblocks.io/txns/${encodeURIComponent(body.transactionHash)}">View transaction</a>`;
-  } catch (e) {
-    note.textContent = `Testnet settlement failed: ${e.message}. Nothing was charged twice; try again.`; button.disabled = false;
+    let id = localStorage.getItem('swarmkit-coop-client');
+    if (!id) { id = crypto.randomUUID(); localStorage.setItem('swarmkit-coop-client', id); }
+    return id;
+  } catch { return crypto.randomUUID(); }
+}
+
+async function settleShare(r) {
+  const mine = r.payments.filter(p => p.buyerId === YOU), note = $('settle-note'), button = $('settle');
+  if (!mine.length) { note.textContent = 'Your team has no payment in this round.'; return; }
+  button.disabled = true;
+  const lines = [];
+  for (const payment of mine) {
+    const provider = state.providers.find(p => p.id === payment.sellerId)?.label ?? payment.sellerId;
+    note.textContent = `Signing and sending your ${usd(payment.amount)} share to ${provider} on NEAR testnet…`;
+    try {
+      let body;
+      for (let attempt = 0; attempt < 4; attempt++) {
+        const response = await fetch(SETTLE_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ clientId: clientId(), roundId: r.roundId, payment: { buyerId: payment.buyerId, sellerId: payment.sellerId, amount: payment.amount } }) });
+        body = await response.json();
+        if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
+        if (body.status === 'confirmed') break;
+        note.textContent = `Sent to ${provider}; waiting for NEAR testnet to finalise it…`;
+        await new Promise(res => setTimeout(res, 2500));
+      }
+      const link = body.transactionHash ? ` <a class="link" href="https://testnet.nearblocks.io/txns/${encodeURIComponent(body.transactionHash)}">View transaction</a>` : '';
+      lines.push(`${body.status === 'confirmed' ? 'Final' : 'Sent, not yet final'}: ${esc(body.amountNear)} testnet NEAR to ${esc(body.to)}.${link}`);
+    } catch (e) {
+      lines.push(`Your share to ${esc(provider)} was not settled: ${esc(e.message)} Press again to retry; a payment already signed is never signed twice.`);
+      button.disabled = false;
+    }
   }
+  note.innerHTML = lines.join('<br>');
 }
 
 // ---------- your result ----------

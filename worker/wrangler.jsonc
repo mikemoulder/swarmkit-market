@@ -1,0 +1,11 @@
+{
+  // Settles "your" share of a GPU co-op round on NEAR testnet through near-swarmkit's settlement runner.
+  // PARENT_ACCOUNT is filled in after you run `node scripts/coop-settler-setup.mjs --faucet-testnet`.
+  // The signing key is a secret: `npx wrangler secret put SETTLER_KEY` (never commit it).
+  "name": "swarmkit-coop-settle",
+  "main": "settle.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": { "PARENT_ACCOUNT": "" },
+  "kv_namespaces": [{ "binding": "SETTLE_KV", "id": "d38397298f6443e0b12bea13710f1983" }]
+}
