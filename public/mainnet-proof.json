@@ -1,0 +1,186 @@
+{
+  "network": "mainnet",
+  "anchor": "abc6fcdf8a9dc24f8f9ba8650bc3a84575d2ad7f6bc9c75220408f11b986db20",
+  "round": "swarmkit-mainnet-1794695258192",
+  "transcriptHash": "1a3d487a10a18b1db55ea1e00d14b97f41e57d2900ec940ed5b3a9638167e02b",
+  "transcript": {
+    "version": 1,
+    "spec": {
+      "id": "swarmkit-mainnet-1794695258192",
+      "mechanismId": "cheapest-capacity-v1",
+      "asset": "nep141:wrap.near",
+      "resource": {
+        "label": "NEAR AI Cloud TEE completions",
+        "unit": "completion",
+        "deliveryWindow": "Same day"
+      },
+      "demandCloses": 10,
+      "commitCloses": 20,
+      "revealCloses": 30,
+      "buyers": [
+        "36379399d363b855c51d4dc5c80f43698ff8fdb282c1fbadcf3d26b1f9bdb25f",
+        "a17ca58cfb87e15f72caec2f0b1d13b4e636b3bd653c31e434be6d6d737983a5",
+        "3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264"
+      ],
+      "sellers": [
+        "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472"
+      ]
+    },
+    "events": [
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "36379399d363b855c51d4dc5c80f43698ff8fdb282c1fbadcf3d26b1f9bdb25f",
+        "request": {
+          "quantity": "2",
+          "budget": "1800000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "a17ca58cfb87e15f72caec2f0b1d13b4e636b3bd653c31e434be6d6d737983a5",
+        "request": {
+          "quantity": "1",
+          "budget": "800000000000000000000"
+        }
+      },
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264",
+        "request": {
+          "quantity": "3",
+          "budget": "3000000000000000000000"
+        }
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "hash": "15fd49941f0ec986aeb1812491b615ea18bba4d22e47bc88ae6307aa9599a3af"
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472",
+        "hash": "5e167cb6afd84b274f635fdd20054bf9f09cbbbbc58c44f1b792321c9c1e11f0"
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "bid": {
+          "capacity": "4",
+          "unitPrice": "500000000000000000000",
+          "salt": "057096410b5d7aac09dab61ba9bbf4bea50c15057be902a09fefd57fc41464d2"
+        }
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472",
+        "bid": {
+          "capacity": "10",
+          "unitPrice": "700000000000000000000",
+          "salt": "2a25be09f8f22fd40b7dd9232ac1ec26bc15154d4482b64898bae507d2dc5eba"
+        }
+      }
+    ],
+    "observedAt": 30
+  },
+  "plan": {
+    "version": 2,
+    "roundId": "swarmkit-mainnet-1794695258192",
+    "asset": "nep141:wrap.near",
+    "payments": [
+      {
+        "id": "[\"swarmkit-mainnet-1794695258192\",\"a17ca58cfb87e15f72caec2f0b1d13b4e636b3bd653c31e434be6d6d737983a5\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+        "buyerId": "a17ca58cfb87e15f72caec2f0b1d13b4e636b3bd653c31e434be6d6d737983a5",
+        "sellerId": "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "amount": "500000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-mainnet-1794695258192\",\"36379399d363b855c51d4dc5c80f43698ff8fdb282c1fbadcf3d26b1f9bdb25f\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+        "buyerId": "36379399d363b855c51d4dc5c80f43698ff8fdb282c1fbadcf3d26b1f9bdb25f",
+        "sellerId": "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "amount": "1000000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-mainnet-1794695258192\",\"3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+        "buyerId": "3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264",
+        "sellerId": "0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91",
+        "amount": "500000000000000000000"
+      },
+      {
+        "id": "[\"swarmkit-mainnet-1794695258192\",\"3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264\",\"34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472\"]",
+        "buyerId": "3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264",
+        "sellerId": "34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472",
+        "amount": "1400000000000000000000"
+      }
+    ]
+  },
+  "transactions": {
+    "create-anchor": "249hFg3PbBT8aFMiGtoNoVB4juBdahqAKadJvhkY7qb1",
+    "create-seller-1": "3MEuBvDvuNsLVZRc2ffC8dbbkcHbNHCXCwZnfsiSeaX6",
+    "create-seller-2": "AEwgZ6JhReLXDCVJie4oq5qVzkMhvYLU3gPqsihCYZt2",
+    "deploy-anchor": "5F2zQuCuPQ8Y8VdLtsjyJ4YgK9HC5iVXXrZ1z7iWueGt",
+    "topup-seller-1": "FskviJwS5TRSNxpMWfERXYWFXoh1ydh76AuVXKYGF4sB",
+    "topup-seller-2": "67Fm67rzga9NKdPYP9pgUbJ1d9UyRjC37VuCQEU5kfQ9",
+    "anchor-commit-1": "Gh7SgC2G2VAQ9Ef9eyhSEUAQvB6obJMvGB85RWyBkpj2",
+    "anchor-commit-2": "AsGDu7tK1RaWwNDWFoQ9wqJwb71PKCfQ8Xi6NuBinGVn",
+    "anchor-sealed": "D8AKZfxMNVN8SqkLAMRKHT7rJAaeb1rJFGki9Va4Wx8z",
+    "fund-buyers": "Dze5cCQ4GCvv6PtnxbQ1HndSbmF8Ck8MYw58tYjdPZWc",
+    "settlement": {
+      "receipts": [
+        {
+          "paymentId": "[\"swarmkit-mainnet-1794695258192\",\"a17ca58cfb87e15f72caec2f0b1d13b4e636b3bd653c31e434be6d6d737983a5\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+          "status": "confirmed",
+          "transactionHash": "GAp51kiGAaJZXuuHjFrCB4tTxPAJj3YRgJNWPH5Uh6B6"
+        },
+        {
+          "paymentId": "[\"swarmkit-mainnet-1794695258192\",\"36379399d363b855c51d4dc5c80f43698ff8fdb282c1fbadcf3d26b1f9bdb25f\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+          "status": "confirmed",
+          "transactionHash": "HkMXUA49FdBC4bSwUHAsfkqF1ACWo7anvzQs7dtksuZk"
+        },
+        {
+          "paymentId": "[\"swarmkit-mainnet-1794695258192\",\"3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264\",\"0393b9e214e27b929208f7cf043a5462caaee3df0ba5f29676592ad96e637c91\"]",
+          "status": "confirmed",
+          "transactionHash": "J4G44a3nzwh8CexzcFDh8Xqqms9rHdPdJ8M6ZhKZkb3K"
+        },
+        {
+          "paymentId": "[\"swarmkit-mainnet-1794695258192\",\"3b5b193c770a1acf54c53aae32b49ca302a188223c2d9b974716bcb720e29264\",\"34eef1546e44781060f6569d22da400eee574fd0bac56a5824de24ab65e75472\"]",
+          "status": "confirmed",
+          "transactionHash": "J7no2zn7yudvfGnQvTS2ffArRrLU8QckHZCyhdFrDF3h"
+        }
+      ],
+      "summary": {
+        "pending": "0",
+        "confirmed": "3400000000000000000000",
+        "failed": "0",
+        "paid": true
+      }
+    },
+    "anchor-result": "HNZwJwtsshYLGRZA8vYwQjSkD5PXJUNi3cUv7TuVAc7W",
+    "lock-anchor": "516QPe9vTe4TipcaDBy5LrWY3L4iHGWq3QVU7epeJZQB"
+  },
+  "stages": [
+    {
+      "stage": "demand",
+      "commitments": 0
+    },
+    {
+      "stage": "commit",
+      "commitments": 2
+    },
+    {
+      "stage": "reveal",
+      "commitments": 2
+    },
+    {
+      "stage": "closed",
+      "commitments": 2
+    }
+  ]
+}
