@@ -1,10 +1,10 @@
 # SwarmKit Market
 
-An inference-credit exchange built on [SwarmKit](https://github.com/mikemoulder/swarmkit). Four buyers pool demand, four sellers commit bids, and the SDK clears a split allocation. Confirmed receipts move balances and inventory into the next round.
+A durable reference economy built on [SwarmKit](https://github.com/mikemoulder/swarmkit). The GPU preset runs 20 buyers and five sellers; the inference preset runs eight buyers and four sellers. Agent policies execute incrementally, the SDK clears split allocations, and payment journals survive browser reloads and local coordinator restarts.
 
 [Open the market](https://mikemoulder.github.io/swarmkit-market/) · [SDK docs](https://mikemoulder.github.io/swarmkit-site/docs/) · [Agent guide](https://mikemoulder.github.io/swarmkit-site/agents/)
 
-![A settled inference credit round in SwarmKit Market](screenshot.png)
+The application is a simulation. Recorded native NEAR testnet transfers are presented separately. Real Intents settlement uses the operator CLI described below.
 
 ## Run locally
 
@@ -16,22 +16,53 @@ npm test
 npm run dev
 ```
 
+For a local coordinator with SQLite persistence, run `npm run build` followed by `npm run serve` and open http://127.0.0.1:4174. Browser-only mode uses IndexedDB and Web Locks. The local service uses the same economy controller and stores checkpoints in `.market/coordinator.sqlite`. Its operator API is bound to loopback and requires a token for mutations. The ignored `.market/operator-token` file supports local CLI clients. This is not a public production service.
+
+Run `npm run experiment -- 12` for twelve additional deterministic rounds in `.market/experiment.sqlite`, or supply a second argument for a fresh database path. Node 22.18's SQLite API is experimental.
+
 The lockfile pins the SDK tarball in `vendor/`. It is the compiled package from the core repository. The market never imports from the core source tree. The Vite build emits a static site in `dist/`.
 
 GitHub Pages serves the built files from the `gh-pages` branch. Run the tests and build before updating that branch.
 
 ## Follow the money
 
-1. Seal and reveal the offers. The allocation draws from Fastlane and Northstar.
-2. Settle payments with **Interrupted broadcast** selected. Resume to reconcile the same simulated transaction hash.
-3. Open the next round. Fastlane is out of inventory, so the next purchase uses different sellers.
-4. Reset and choose **Buyer cap too low** to see an Ed25519 approval block that buyer’s entire allocation. Resume to supply its revised signed cap. Choose **Supply shortage** to see a round close without any payments.
+1. Inspect an agent and edit its policy before collecting demand. Each stage runs only when advanced; the round is not precomputed.
+2. Run a round with the default lost-acknowledgement experiment. Refresh the page or restart the local coordinator. Recover the same payment identities from durable storage.
+3. Inspect buyer/seller allocation lines, commitment hashes, charges, receipt states and the event history.
+4. Open the next round. Buyers consume capacity and earn explicitly modeled work income. Sellers pay to replenish inventory and adjust quotes based on utilization.
+5. Configure a supply shock, a missing reveal or a low buyer approval to inspect failure behavior. Recovery does not silently raise a real spending cap: the demo supplies a previously generated synthetic approval.
 
-The browser uses the SDK's real coordinator, replay, policy checks and settlement runner. Its transport and journal are in-memory simulation components. Export an audit JSON to inspect the transcript and receipt state. Recorded native NEAR testnet runs are presented separately and can be followed to their explorer transactions.
+The browser uses the SDK's coordinator, replay, incremental simulation, policy checks and settlement runner. Journal entries, sent records and applied payment IDs persist. The restart test kills a child process immediately after a simulated broadcast is recorded, then recovers in a new process without duplicate signing or ledger application. Export includes public transcripts, receipt claims, decisions, history and accounting; private unrevealed offers and journal entries are excluded.
+
+## Scenario economics
+
+Buyer demand is limited by balance and unit-price cap. Sellers discount pools of at least 20 units by one credit, bounded by their floor. After a completed round, buyers consume stock and earn eight simulated external-work credits per unit. Sellers replenish up to 70% of nameplate capacity at one credit per unit, within their cash and inventory limits. Utilization above 85% raises the next base quote by one; below 40% lowers it by one, within scenario bounds.
+
+The solo comparison uses the same opening inventory and buyer budgets, buying sequentially with individual quotes. It reports no savings if demand cannot be filled. This is a defined comparison, not a globally optimal solver or a promise of savings in real markets. Money and inventory identities are tested across twelve rounds, including their explicit income, cost, consumption and production terms.
+
+## Source boundaries
+
+- `src/economy.mjs`: scenario policies, incremental execution and idempotent simulated settlement.
+- `src/controller.mjs`: command serialization and checkpoint persistence.
+- `src/browser-store.mjs`, `scripts/store.mjs`: IndexedDB and SQLite adapters with revision checks.
+- `scripts/server.mjs`: local operator API and static app host.
+- `src/main.mjs`: inspectable UI; all market rules and settlement primitives come through the package.
+
+## Validate native NEAR testnet settlement
+
+```sh
+npm run testnet -- --faucet-testnet --gpu
+npm run testnet -- --faucet-testnet --split
+npm run testnet:audit -- .market/testnet/<printed-account>/evidence.json
+```
+
+These commands use the installed SDK, disposable faucet-funded testnet subaccounts and actual native transfers. The GPU run provisions 20 buyers and five sellers. The split run pays two sellers from one buyer. Each exercises incremental stages with serialized checkpoints, derives payments from the closed transcript, interrupts after the first signed transaction is journaled, resumes without signing a replacement, and audits finalized receipts against RPC. Evidence includes the transcript, exact payment plan, hashes and audit result. The audit command independently rechecks the public receipts without keys or signing.
+
+Private keys exist only in memory for this bounded validation run. It is not a restartable wallet service; an unexpected process exit before remaining transactions are signed requires a fresh validation run. Signed transaction journals stay under ignored `.market/`. Faucet availability is required. These native testnet transfers do not establish Intents execution or real resource delivery. The browser credit economy remains a separate sandbox.
 
 ## Settle through NEAR Intents
 
-The browser’s unsigned request preview uses illustrative accounts. For a funded run, supply your own closed SwarmKit transcript that uses actual accounts and a supported Verifier asset such as `nep141:wrap.near`. Configure the relayer and per-buyer caps from [accounts.example.json](accounts.example.json). Load the referenced key variables into the process environment. Buyer keys must be recognized by the Verifier and the buyers must already hold the token there. The relayer needs NEAR for gas.
+For a funded run, supply a closed SwarmKit transcript that uses actual accounts and a supported Verifier asset such as `nep141:wrap.near`. The browser's synthetic credit transcript cannot be converted into a payment by changing its asset label. Configure the relayer and per-buyer caps from [accounts.example.json](accounts.example.json). Load the referenced key variables into the process environment. Buyer keys must be recognized by the Verifier and the buyers must already hold the token there. The relayer needs NEAR for gas.
 
 ```sh
 npm run intents -- round.json accounts.json --review

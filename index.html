@@ -1,40 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="software" data-radius="sharp">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101316">
-  <meta name="description" content="Run a multi-agent inference credit market with SwarmKit. Follow bids, buyer approvals, and settlement.">
-  <title>SwarmKit Market | Inference credit exchange</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101316"><meta name="page-type" content="software"><meta name="site-kind" content="software">
+  <meta name="description" content="Inspect a durable agent economy built with near-swarmkit: policies, sealed bids, split allocations and recoverable settlement.">
+  <title>SwarmKit Market · Agent economy laboratory</title>
 </head>
 <body>
   <a class="skip" href="#market">Skip to market</a>
-  <header class="top"><a class="brand" href="./"><span>✳</span> SwarmKit <small>Market</small></a><nav aria-label="Project"><a href="https://mikemoulder.github.io/swarmkit-site/docs/">SDK docs ↗</a><a href="https://github.com/mikemoulder/swarmkit-market">Source ↗</a></nav></header>
+  <header class="top"><a class="brand" href="./"><span aria-hidden="true">✳</span> SwarmKit <small>/ Market</small></a><nav aria-label="Project"><a href="./testnet.html">Testnet ↗</a><a href="https://mikemoulder.github.io/swarmkit-site/docs/">SDK docs ↗</a><a href="https://github.com/mikemoulder/swarmkit-market">Source ↗</a></nav></header>
   <main id="market">
-    <div class="heading"><div><p class="mode">● SIMULATION</p><h1>Inference credit market</h1><p>Pool agent demand, clear sealed bids, and follow each buyer’s payment.</p></div><button id="reset" class="secondary" type="button">Reset market</button></div>
-    <div class="controls">
-      <label>Market conditions<select id="supply"><option value="normal">Available supply</option><option value="tight">Supply shortage</option></select></label>
-      <label>Settlement scenario<select id="scenario"><option value="interrupted">Interrupted broadcast</option><option value="approval">Buyer cap too low</option><option value="normal">Normal settlement</option></select></label>
-      <button id="advance" type="button" disabled>Open round</button>
-    </div>
-    <p id="status" role="status">Preparing the market.</p>
-    <div class="workspace">
-      <section class="panel exchange" aria-labelledby="round-title">
-        <div class="panel-heading"><div><p class="micro" id="round-number">ROUND 01</p><h2 id="round-title">Market round</h2></div><button id="export" class="secondary" type="button" disabled>Export audit</button></div>
-        <ol class="phases" aria-label="Round phases" id="phases"></ol>
-        <div class="metrics" id="metrics"></div>
-        <div id="book"></div>
-        <details id="intent-panel" hidden><summary>Inspect unsigned NEAR Intents requests</summary><p>Preview accounts and amounts only. The operator CLI connects real Verifier accounts.</p><pre id="intents"></pre></details>
-      </section>
-      <section class="panel ledger" aria-labelledby="ledger-title"><div class="panel-heading"><div><p class="micro">BUYERS AND SELLERS</p><h2 id="ledger-title">Agent ledger</h2></div></div><div id="ledger"></div><div class="history"><h3>Round history</h3><ol id="history"></ol></div></section>
-    </div>
-    <section class="panel chain" aria-labelledby="chain-title">
-      <div class="panel-heading"><div><p class="micro">RECORDED TESTNET EVIDENCE</p><h2 id="chain-title">NEAR settlement receipts</h2></div><label class="evidence-select">Testnet run<select id="evidence"><option value="gpu-testnet">20-buyer GPU round</option><option value="split-testnet">Two-seller split round</option></select></label></div>
-      <p>Replayed allocations with transaction hashes from finalized native NEAR testnet transfers.</p>
-      <div id="chain-output" aria-live="polite"></div>
-    </section>
+    <div class="heading"><div><p class="eyebrow">SWARMKIT REFERENCE APPLICATION <span class="badge">SIMULATION</span></p><h1>Inspect an agent economy.</h1><p class="intro">Independent policies. Shared demand. Every decision inspectable.</p></div><div class="session-info"><span id="storage">Opening durable storage…</span><button id="new-market" class="secondary">Configure a new market</button></div></div>
+    <section class="runbar" aria-label="Market controls"><div><span class="micro" id="round-number">ROUND 01</span><h2 id="round-title">Loading market</h2></div><div class="run-actions"><button id="advance" disabled>Collect demand</button><button id="run" class="secondary" disabled>Run one round</button><button id="export" class="secondary" disabled>Export public record</button></div></section>
+    <p id="status" role="status">Loading the last committed checkpoint.</p>
+    <ol class="phases" aria-label="Execution progress" id="phases"></ol>
+    <div class="metrics" id="metrics"></div>
+    <nav class="tabs" aria-label="Market workspace"><button data-tab="overview" aria-current="page">Overview</button><button data-tab="orderbook">Order book</button><button data-tab="agents">Agents</button><button data-tab="activity">Activity</button><button data-tab="settlement">Settlement</button></nav>
+    <div id="workspace" tabindex="-1"></div>
+    <details class="model-note"><summary>What this economy models</summary><p>Buyers purchase capacity and consume it on paid work in the next round, earning 8 simulated credits per unit. Sellers replenish up to 70% of capacity at 1 credit per unit and adjust their next quote based on utilization. Pools of 20 or more units receive a 1-credit discount, bounded by the seller’s floor. These are explicit scenario rules, not market predictions. All activity here is simulated.</p><p>Solo comparisons use the same opening inventory and budgets, with sequential individual quotes. If that comparison cannot fill demand, no savings figure is reported. The SDK’s split allocator is a deterministic heuristic.</p></details>
   </main>
-  <footer><a href="https://mikemoulder.github.io/swarmkit-site/">SwarmKit SDK ↗</a><span>Simulation runs locally in your browser.</span></footer>
+  <footer><a href="https://mikemoulder.github.io/swarmkit-site/">Built with near-swarmkit ↗</a><span>No wallet or funds required. Simulation only.</span></footer>
+  <dialog id="configuration"><form id="configure-form"><div class="dialog-heading"><h2>Start an economy</h2><button type="button" id="close-config" class="secondary">Cancel</button></div><p>The current local experiment will be replaced. Export its public record first if you want to keep it.</p><label>Reference market<select name="preset"><option value="gpu">GPU cooperative · 20 buyers / 5 sellers</option><option value="inference">Inference exchange · 8 buyers / 4 sellers</option></select></label><label>Supply conditions<select name="supply"><option value="normal">Renewable capacity</option><option value="tight">Supply shock · one unit per seller</option></select></label><label>Failure experiment<select name="scenario"><option value="interrupted">Lost broadcast acknowledgement</option><option value="normal">Normal settlement</option><option value="approval">Buyer approval below required spend</option><option value="missing">First seller withholds its reveal</option></select></label><label>Simulation seed<input name="seed" type="number" step="1" value="2026" required></label><p id="config-error" role="alert"></p><button type="submit">Create market</button></form></dialog>
   <script type="module" src="./src/main.mjs"></script>
-</body>
-</html>
+</body></html>

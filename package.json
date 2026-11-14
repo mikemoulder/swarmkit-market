@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.18.0" },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "scripts": {
+    "testnet": "node scripts/testnet.mjs",
+    "testnet:audit": "node scripts/audit-testnet.mjs",
     "dev": "vite",
     "build": "vite build --base=./",
     "preview": "vite preview",
     "test": "node --test test/*.test.mjs",
-    "intents": "node scripts/intents.mjs"
+    "intents": "node scripts/intents.mjs",
+    "experiment": "node scripts/experiment.mjs",
+    "serve": "node scripts/server.mjs"
   },
   "dependencies": {
     "@scure/base": "^2.0.0",
     "near-api-js": "7.2.0",
     "near-swarmkit": "file:vendor/near-swarmkit-0.1.0.tgz"
   },
-  "devDependencies": { "vite": "^8.3.8" }
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
 }
