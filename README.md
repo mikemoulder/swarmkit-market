@@ -73,6 +73,19 @@ Private keys exist only in memory for this bounded validation run. It is not a r
 
 ## Settle through NEAR Intents
 
+**Done on mainnet.** One sealed round settled through `intents.near` for 0.001 wNEAR between two agent accounts: preflighted with `simulate_intents`, executed with `execute_intents`, reconciled by the SDK as `confirmed`, and audited ([transaction](https://nearblocks.io/txns/DHs7dV52LkYyme7mCpKYx7eBERuJN8ZdZiAyoxybAvPE), [public/intents-mainnet.json](public/intents-mainnet.json)). To repeat it with your own small amount:
+
+```sh
+node scripts/intents-mainnet-setup.mjs                    # two implicit accounts; keys stay in .market/ (git-ignored)
+node scripts/intents-mainnet-deposit.mjs --mainnet-funds  # after funding the buyer: wrap 0.01 NEAR, deposit into the Verifier
+node scripts/intents-mainnet-run.mjs --prepare            # build the sealed round and plan
+node scripts/intents-mainnet-run.mjs --preflight          # simulate the signed intent; moves nothing
+node scripts/intents-mainnet-run.mjs --execute            # settle; use --reconcile to recheck without signing
+node scripts/intents-mainnet-evidence.mjs <tx hash>       # SDK reconciliation and audit, written to public/
+```
+
+The general operator CLI below works with any closed transcript.
+
 For a funded run, supply a closed SwarmKit transcript that uses actual accounts and a supported Verifier asset such as `nep141:wrap.near`. The browser's synthetic credit transcript cannot be converted into a payment by changing its asset label. Configure the relayer and per-buyer caps from [accounts.example.json](accounts.example.json). Load the referenced key variables into the process environment. Buyer keys must be recognized by the Verifier and the buyers must already hold the token there. The relayer needs NEAR for gas.
 
 ```sh

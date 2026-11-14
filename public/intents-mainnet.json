@@ -1,0 +1,83 @@
+{
+  "network": "mainnet",
+  "execution": "near-intents",
+  "verifier": "intents.near",
+  "checkedAt": "2026-11-14T20:17:43.605Z",
+  "transactionHash": "DHs7dV52LkYyme7mCpKYx7eBERuJN8ZdZiAyoxybAvPE",
+  "explorer": "https://nearblocks.io/txns/DHs7dV52LkYyme7mCpKYx7eBERuJN8ZdZiAyoxybAvPE",
+  "status": "confirmed",
+  "auditMatches": true,
+  "verifiedSummary": {
+    "pending": "0",
+    "confirmed": "1000000000000000000000",
+    "failed": "0",
+    "paid": true
+  },
+  "verifierBalancesAfter": {
+    "buyer": "9000000000000000000000",
+    "seller": "1000000000000000000000"
+  },
+  "transcript": {
+    "version": 1,
+    "spec": {
+      "id": "gpu-coop-intents-1794686479470",
+      "mechanismId": "cheapest-capacity-v1",
+      "asset": "nep141:wrap.near",
+      "resource": {
+        "label": "H100 GPU hours",
+        "unit": "hour",
+        "deliveryWindow": "Next week"
+      },
+      "demandCloses": 10,
+      "commitCloses": 20,
+      "revealCloses": 30,
+      "buyers": [
+        "16edfaecf85b63f75ca38528133de563490ebd242f2404daf594017e4a07d0f3"
+      ],
+      "sellers": [
+        "96d2c4a927a5a1c05fc2d72f82edcc9a9bbd0311fec74fb289b9314a51cac00a"
+      ]
+    },
+    "events": [
+      {
+        "type": "demand",
+        "at": 9,
+        "buyerId": "16edfaecf85b63f75ca38528133de563490ebd242f2404daf594017e4a07d0f3",
+        "request": {
+          "quantity": "1",
+          "budget": "1000000000000000000000"
+        }
+      },
+      {
+        "type": "commitment",
+        "at": 10,
+        "sellerId": "96d2c4a927a5a1c05fc2d72f82edcc9a9bbd0311fec74fb289b9314a51cac00a",
+        "hash": "bde1dfbb5b7e8d3bfeb4924cfeec917eaddbb9f64f2a4a21d3810032bf3d4a94"
+      },
+      {
+        "type": "reveal",
+        "at": 20,
+        "sellerId": "96d2c4a927a5a1c05fc2d72f82edcc9a9bbd0311fec74fb289b9314a51cac00a",
+        "bid": {
+          "capacity": "1",
+          "unitPrice": "1000000000000000000000",
+          "salt": "057096410b5d7aac09dab61ba9bbf4bea50c15057be902a09fefd57fc41464d2"
+        }
+      }
+    ],
+    "observedAt": 30
+  },
+  "plan": {
+    "version": 2,
+    "roundId": "gpu-coop-intents-1794686479470",
+    "asset": "nep141:wrap.near",
+    "payments": [
+      {
+        "id": "[\"gpu-coop-intents-1794686479470\",\"16edfaecf85b63f75ca38528133de563490ebd242f2404daf594017e4a07d0f3\",\"96d2c4a927a5a1c05fc2d72f82edcc9a9bbd0311fec74fb289b9314a51cac00a\"]",
+        "buyerId": "16edfaecf85b63f75ca38528133de563490ebd242f2404daf594017e4a07d0f3",
+        "sellerId": "96d2c4a927a5a1c05fc2d72f82edcc9a9bbd0311fec74fb289b9314a51cac00a",
+        "amount": "1000000000000000000000"
+      }
+    ]
+  }
+}
