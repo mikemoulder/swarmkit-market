@@ -1,10 +1,16 @@
 # SwarmKit Market
 
-A durable reference economy built on [SwarmKit](https://github.com/mikemoulder/swarmkit). The GPU preset runs 20 buyers and five sellers; the inference preset runs eight buyers and four sellers. Agent policies execute incrementally, the SDK clears split allocations, and payment journals survive browser reloads and local coordinator restarts.
+A running agent economy built on [SwarmKit](https://github.com/mikemoulder/swarmkit), in three views.
 
-[Open the market](https://mikemoulder.github.io/swarmkit-market/) · [SDK docs](https://mikemoulder.github.io/swarmkit-site/docs/) · [Agent guide](https://mikemoulder.github.io/swarmkit-site/agents/)
+[Open the live economy](https://mikemoulder.github.io/swarmkit-market/) · [Recovery lab](https://mikemoulder.github.io/swarmkit-market/lab.html) · [Testnet receipts](https://mikemoulder.github.io/swarmkit-market/testnet.html) · [SDK docs](https://mikemoulder.github.io/swarmkit-site/docs/)
 
-The application is a simulation. Recorded native NEAR testnet transfers are presented separately. Real Intents settlement uses the operator CLI described below.
+**Live economy** (`index.html`). Nineteen agents trade across two linked markets. Four GPU sellers sell hours to four research labs and to three inference providers; the providers turn the hours they win into inference batches and sell those to eight apps. Every round in both markets is a sealed-bid `near-swarmkit` round with split fulfillment. Each agent follows its own strategy (undercutting, utilization pricing, cost-plus, premium; deadline, bargain, steady, patient buyers) and writes a one-line reason for every decision. Press *Cut GPU supply* and the shock travels: GPU prices rise, provider costs follow, inference prices rise, and price-sensitive apps are released from the round. Nothing scripts that path; it comes from the agents' decisions. When a pool cannot be filled within every buyer's cap, the coordinator releases the lowest bidder and runs the round again with the same sealed offers. Each round's SDK transcript can be downloaded and replayed.
+
+**Recovery lab** (`lab.html`). One market run stage by stage, with editable agent policies, durable IndexedDB or SQLite checkpoints and injected failures: a lost broadcast acknowledgement, a missing reveal, a buyer approval below its spend.
+
+**Testnet receipts** (`testnet.html`). The same settlement flow on native NEAR testnet: 22 of 22 transfers final and audited against RPC.
+
+The live economy and the lab use simulated credits. Recorded native NEAR testnet transfers are presented separately. Real Intents settlement uses the operator CLI described below.
 
 ## Run locally
 
@@ -41,6 +47,9 @@ Buyer demand is limited by balance and unit-price cap. Sellers discount pools of
 The solo comparison uses the same opening inventory and buyer budgets, buying sequentially with individual quotes. It reports no savings if demand cannot be filled. This is a defined comparison, not a globally optimal solver or a promise of savings in real markets. Money and inventory identities are tested across twelve rounds, including their explicit income, cost, consumption and production terms.
 
 ## Source boundaries
+
+- `src/linked-economy.mjs`: the two-market economy, agent strategies and the coordinator's release rule; deterministic from a seed.
+- `src/live.mjs`, `src/live.css`: the live economy view.
 
 - `src/economy.mjs`: scenario policies, incremental execution and idempotent simulated settlement.
 - `src/controller.mjs`: command serialization and checkpoint persistence.
