@@ -1,1006 +1,1087 @@
 {
   "network": "testnet",
   "token": "wrap.testnet",
-  "delivery": "simulated",
+  "delivery": "NEAR AI Cloud TEE models: z-ai/glm-5.3-flash, Qwen/Qwen3.6-35B-A3B-FP8, deepseek-ai/DeepSeek-V4.1-Flash-1017",
   "steps": [
     {
       "step": "create-account",
-      "who": "exchange.swarmx-56401c0681.testnet",
-      "tx": "6EM7KWD3TVQVw8tqnqMXQYuXMovVyxMVP9fcBpJmU9fx"
+      "who": "exchange.swarmx-6653d3dd2c.testnet",
+      "tx": "8UgrjYziDQN2C6ZdnXafwE6dutAAMKJin8yMEQ23gLPW"
     },
     {
       "step": "create-account",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "DeH8JV3DeJd4enrsjZfCxezBgKQB74ExY1qX1uGUZhpj"
+      "who": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "tx": "CCXT2gNCs5ff8tmuomSx5tLxcVgmzt5BrPKtPehhKPrn"
     },
     {
       "step": "create-account",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "C6938BUDeX6VSAtpfAHBgiYNzno8N96ohuVjPHnSs3Ux"
+      "who": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "tx": "7jvK7xbjuU81wDcQ9VgHr1emnFkxSuP94qDVyLuMxEmD"
     },
     {
       "step": "create-account",
-      "who": "buyer-3.swarmx-56401c0681.testnet",
-      "tx": "E7DhSu5xKppsgs9vYz97DNueeSnQ5eYumvgb6s6dAY9V"
+      "who": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "tx": "GXtvd8x7SWCwPJZZdFtLbfbY97kvD8mtDAYsXUM2vVJx"
     },
     {
       "step": "create-account",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "F6BRMxMpdEk9ZgZkSGrQVhmmXSKGtt4nTCJSKetjqmLs"
+      "who": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "tx": "DF3C14NdnDa3VnSiGekxswiGB9VUPQvDKRCHeL6CaJrt"
     },
     {
       "step": "create-account",
-      "who": "buyer-5.swarmx-56401c0681.testnet",
-      "tx": "2pyVGLFMFd8t5DvdwYDvyLKo64vBp2uuSygQqLtvDi5v"
+      "who": "buyer-5.swarmx-6653d3dd2c.testnet",
+      "tx": "HnqmcqMokUguwmcQoL8NMqzCSDeoE2S6SsfkRW1JjRUD"
     },
     {
       "step": "create-account",
-      "who": "buyer-6.swarmx-56401c0681.testnet",
-      "tx": "4m1M4qMTmrYSYmf6mpRNwoof4SW1Xm4vyTZ65oj9jez7"
+      "who": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "tx": "AgUzTKD7rZ8evQUd1aCF7j7B6tx1ZXW816XkST8aEAXg"
     },
     {
       "step": "create-account",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "5HmJVF5Bpn6Qa7frkQBPiWFtGk8ZYw32152ZXGa5f4Ft"
+      "who": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "tx": "F1wUCfequborjcA7JSJHm7kG3azFb2imy8dyz1XiAN2Y"
     },
     {
       "step": "create-account",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "BRZkyE4MDV4gmcF4uhCruLGChtaxKRCKCGkfCSaGxH2d"
+      "who": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "tx": "3P4PxsaxY67G8E6czUAshG2CFeDe4TQfkdCjXdYmvQnU"
     },
     {
       "step": "create-account",
-      "who": "buyer-9.swarmx-56401c0681.testnet",
-      "tx": "SZmGgSLwu1wLU3VyGA4H3Z3CxDBbYpqAZ77PcrFAcNe"
+      "who": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "tx": "3KDhzkVMFzRGD23tZebsH3CNZAUBPckLkXMpDbxDM8Y2"
     },
     {
       "step": "create-account",
-      "who": "buyer-10.swarmx-56401c0681.testnet",
-      "tx": "H1J58Rm9pX5mifwTcWDCmwrDhxaJSBq8CFdvLcDfmDGg"
+      "who": "buyer-10.swarmx-6653d3dd2c.testnet",
+      "tx": "2gxp3v3TSVgpZDbjJpAsKPdaNshwYw7AkpYUtS2BewdX"
     },
     {
       "step": "create-account",
-      "who": "seller-1.swarmx-56401c0681.testnet",
-      "tx": "EFjGwRFc7tfkSJcnYseiAAjYVPysq8MfeCecMQejTnUs"
+      "who": "seller-1.swarmx-6653d3dd2c.testnet",
+      "tx": "HDgnwFv5qALaX9ZUCUudJUTXLwEopCEG2diMkhzcACzY"
     },
     {
       "step": "create-account",
-      "who": "seller-2.swarmx-56401c0681.testnet",
-      "tx": "9qFNskJkqnazBdCgNhJ4kWE4rtVHa82JEwMhmuWbuVGT"
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "tx": "7ztnXGd8eHTt14JMYukmbAW8ZiNtQyhhNdeDUXuFfP7p"
     },
     {
       "step": "create-account",
-      "who": "seller-3.swarmx-56401c0681.testnet",
-      "tx": "2sWj2LZ4FLEsKWQ9UsVQkQ7ZhbFwVAD1QRBVkLGPZQJt"
+      "who": "seller-3.swarmx-6653d3dd2c.testnet",
+      "tx": "EhGbcnH44n7aphH3MUwQzmCKHjjfU47V2C6CJEEnXJkd"
     },
     {
       "step": "create-account",
-      "who": "seller-4.swarmx-56401c0681.testnet",
-      "tx": "3sFr2MFnzR9nM392DrJ1DHC2AtBstvZbwFX7YMJopwGX"
+      "who": "seller-4.swarmx-6653d3dd2c.testnet",
+      "tx": "AEb7rsn5E6aGyL74kiJHefa8KugbejFaEVxAjuN6bDZ7"
     },
     {
       "step": "create-account",
-      "who": "seller-5.swarmx-56401c0681.testnet",
-      "tx": "2pCSZ5SUQMrhhWjZ2NXH6pGnJuvu44Wmb7FHgAFBTfD6"
+      "who": "seller-5.swarmx-6653d3dd2c.testnet",
+      "tx": "2SNTWYLRRESqAsg23ACKZ9Lymf61S1pM8P5aN4pVymHL"
     },
     {
       "step": "deploy",
-      "who": "exchange.swarmx-56401c0681.testnet",
-      "tx": "HHQWYujrieLXsncXsjDKZPGp9fejytEZj5rS7kettKTE",
-      "wasmSha256": "d010a98860ca4b0bfde50c5878bcee435a870a9b6ef25e41485f1389dbe225d0"
+      "who": "exchange.swarmx-6653d3dd2c.testnet",
+      "tx": "8KBjtRxkyqh8TYQSaQAypYyv76AayvurXuhoUGt1HxNZ",
+      "wasmSha256": "5a0da239650f75d17899c595595d02e04ccc01ab378d4357974e2a1fc60ebb47"
     },
     {
       "step": "init",
-      "who": "exchange.swarmx-56401c0681.testnet",
-      "tx": "5H9J67sLsuvDKLnX7fd9J2gvxoSVyU9197ekNB6fa8CK"
+      "who": "exchange.swarmx-6653d3dd2c.testnet",
+      "tx": "9Hoy5oYV2kcFY54d4zvDqC1x1WQmyhbp3V72Px9qdj47"
     },
     {
       "step": "open-round",
-      "who": "swarmx-56401c0681.testnet",
-      "tx": "HRmNWA8Jp6L6377u8k6GEkfRZm6oJ4Awom7eBK4TUXJW",
+      "who": "swarmx-6653d3dd2c.testnet",
+      "tx": "4rDJ6gCLCnqSc2JujQjoSCdPmLwjY4m8ZcRhvqpHWx1M",
       "roundId": 0
     },
     {
       "step": "join",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "DDS9VpbZ5By51EVxecTDuMFqBQ6KDmf8u9ueqkKfs7My",
+      "who": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "tx": "geoNt2ZBTyEgiGvSDPtQMQZBaFbZDkCTL48JjBbi4tN",
       "units": 4,
       "budget": "36000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "D9UtefuBPr2jd8ciipo38tKJS65FsTqE1bjLuQyVCpzM",
+      "who": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "tx": "FeVaf8eBxHpC1Ln81UCy3y6RELR4cnHByKedw7LLV3uU",
       "units": 3,
       "budget": "21000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-3.swarmx-56401c0681.testnet",
-      "tx": "7G2xUPqcKj9sQdxR7JvjdDFeNCSNFU9h6RySSWLrdjqt",
+      "who": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "tx": "5RUY15zqto1meRiyKWSSxpjBBf821RpSvDPopcyZUQ5W",
       "units": 2,
       "budget": "20000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "5gUpiAUDuD8866nzdHydtiSqejYSPXdQc4H5oLjxr4DM",
+      "who": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "tx": "596cgP3vjZDtmDVx3RYA5UHF3Ji7qj1WnFBrkZojmTP3",
       "units": 5,
       "budget": "40000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-5.swarmx-56401c0681.testnet",
-      "tx": "5ngAyc25ppHEbFAUNC95imLcjkaoZFrAMxZnzmVncddb",
+      "who": "buyer-5.swarmx-6653d3dd2c.testnet",
+      "tx": "jJv8Cu2ZLehLaQaW8dZ1hdwV9Tg6ETRKdhtiy1JFrnE",
       "units": 1,
       "budget": "12000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-6.swarmx-56401c0681.testnet",
-      "tx": "6AHYEt9ZhjB94yUhANz8z17v22JdpvrfBww43JBE3n72",
+      "who": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "tx": "94AqHqDJWbe3v7yL2Ytz8UE7fBbMUWmVkuDi8fxg6JMj",
       "units": 3,
       "budget": "27000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "3CtBDRqUgCeR1riEwrvahAfmfjXvJLpg4g3rCZHJZ2QW",
+      "who": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "tx": "6YQw4vKMMEnKhmCT2PD5xZoY3FYtNLhBENXgK8ZWeWfp",
       "units": 2,
       "budget": "12000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "9J1MLWZMkKKjMddAiHh36EkDyLS1uNV2xHnJYSDG2QKf",
+      "who": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "tx": "g6cJ7jxWnWoC9vnynLn77urVbZBoV9KKVfuMQHnoGWn",
       "units": 4,
       "budget": "44000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-9.swarmx-56401c0681.testnet",
-      "tx": "DUAjR7VwbxzRXqhhxtw4TgbpKQq7Wh8zLUZhwXF4KwbC",
+      "who": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "tx": "72YCf1SXRRhJD7gJuB49ErLEKaJkowvgRiFe2B8Nw2cB",
       "units": 2,
       "budget": "16000000000000000000000"
     },
     {
       "step": "join",
-      "who": "buyer-10.swarmx-56401c0681.testnet",
-      "tx": "9JNF2bycnHLHff5WENSET5ND9Ba5KN83S6U9NuFE6gzs",
+      "who": "buyer-10.swarmx-6653d3dd2c.testnet",
+      "tx": "awrAPfa7dZ9u5ieJxDS4yd5ApHNH6exaVTbiGDWVeUM",
       "units": 3,
       "budget": "30000000000000000000000"
     },
     {
       "step": "commit",
-      "who": "seller-1.swarmx-56401c0681.testnet",
-      "tx": "BQ6ADNKgsALtARNHL1GZhtCeu5kjE3z3W6h5pfQJaMbc",
-      "hash": "edc5aa559929e07536f857c49dc2b784599594ddf9147a478e7c27e62c2baac0"
+      "who": "seller-1.swarmx-6653d3dd2c.testnet",
+      "tx": "3rx98RSLJGmbZJGU6sbKEAt4tRMUqaQJBDcL3BQ1854y",
+      "hash": "7f14b91565241fc91891ed60da0b91d2cc39e857a12fe232b901d2245c3825ca"
     },
     {
       "step": "commit",
-      "who": "seller-2.swarmx-56401c0681.testnet",
-      "tx": "9ZQapSzQdVu31xL3chacf3RTpUoZ595fuwKqoCsnqAHE",
-      "hash": "d3b81dbf45a2fe496eb3c0222a99ea17340f9649ffadc10a05cb8b6208e4fbc2"
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "tx": "B8msQYML9LioDryHRdHy8JC8p2GqEoGHBhVio5aoNQCT",
+      "hash": "a9ded22f293d05194fd8d4e4d714916316357a9f405858bda060604170583bbb"
     },
     {
       "step": "commit",
-      "who": "seller-3.swarmx-56401c0681.testnet",
-      "tx": "2hGiHxEYfzsF4wvdJW3xYKU7a6LoHzi52Khcz6gFPWWW",
-      "hash": "f1bf5db348d48a5f0a7de0eea166315c0a84989274d973b537aa3d25f41d17f2"
+      "who": "seller-3.swarmx-6653d3dd2c.testnet",
+      "tx": "LGv5Rt2SAMRaMYCuzxS8pMUfWV9kVcD79oMnG225VQT",
+      "hash": "094da83ad2e7bc8f5e5b20ea7d6900078c46dcbee70ae883c7ac0d23dbd531fd"
     },
     {
       "step": "commit",
-      "who": "seller-4.swarmx-56401c0681.testnet",
-      "tx": "4HLiKQCgUthYFAavKHh1KHhMP7gM9zumcn5XREX3mrDM",
-      "hash": "62a98d870b70341612bcc09362c86a5440ddca6cdddd4102d5a140642e77a170"
+      "who": "seller-4.swarmx-6653d3dd2c.testnet",
+      "tx": "4DAQ62vajw11WVogUYpAugh4DZH3kvAtQSQDZ9HP1kGi",
+      "hash": "89209f09615c06bc4a6311435e3051c8487a6313ce08f85fdfb8616e79c36a85"
     },
     {
       "step": "commit",
-      "who": "seller-5.swarmx-56401c0681.testnet",
-      "tx": "Cng2S8mzuQzAaQK7gh5VqngNKzLgzwfqozdfFmdqoSvY",
-      "hash": "270c1bbae71c5b8a7af2bcf829021d133271176c31a8ae35291c7df634ea9a69"
+      "who": "seller-5.swarmx-6653d3dd2c.testnet",
+      "tx": "DvVZyravFw3fFMHCZydKnJYUtFnjfxdNTtWBGCc228ey",
+      "hash": "1f1d37a89bf8268cf918d20546dd3b1c5817dde7b9cdee774b42e671eaddaa13"
     },
     {
       "step": "reveal",
-      "who": "seller-1.swarmx-56401c0681.testnet",
-      "tx": "6V2JVxYD2UuUpBdAqvd8Y183Tnz9JdqXU2UhR45fJ3rU",
+      "who": "seller-1.swarmx-6653d3dd2c.testnet",
+      "tx": "2DvdrSMkWag9mrN2autrWHFhA8e72BbV9CRXkiYbggkR",
       "capacity": "9",
       "unitPrice": "5000000000000000000000"
     },
     {
       "step": "reveal",
-      "who": "seller-2.swarmx-56401c0681.testnet",
-      "tx": "Atp8EKTNzJkw6gs7LbMapbMkKLTWSdvLjiwytRzPi25q",
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "tx": "225kf5sHW4cfKDTrtpKwN5xMSBUgrgy6peXXemnG9YjT",
       "capacity": "20",
       "unitPrice": "6000000000000000000000"
     },
     {
       "step": "reveal",
-      "who": "seller-3.swarmx-56401c0681.testnet",
-      "tx": "3SsXAwQSGz8dWgQUmiPecw9Q4QWjXBArHy5vNNfSCTqA",
+      "who": "seller-3.swarmx-6653d3dd2c.testnet",
+      "tx": "G7JH4iRom2pHLiAs7YHuEcSvxZjCERi1s3ksPxv5ZRNN",
       "capacity": "29",
       "unitPrice": "7700000000000000000000"
     },
     {
       "step": "no-reveal",
-      "who": "seller-4.swarmx-56401c0681.testnet"
+      "who": "seller-4.swarmx-6653d3dd2c.testnet"
     },
     {
       "step": "reveal",
-      "who": "seller-5.swarmx-56401c0681.testnet",
-      "tx": "BVnau3XSnaongK2xwQWzCKTZSov63xeVStq7f5YZ6dQF",
+      "who": "seller-5.swarmx-6653d3dd2c.testnet",
+      "tx": "2ihAoeWEkjkidxAjtVqQrh4iXj5JL6L6MAYu4thERvkg",
       "capacity": "29",
       "unitPrice": "10350000000000000000000"
     },
     {
       "step": "clear",
-      "who": "swarmx-56401c0681.testnet",
-      "tx": "HmjpDj6VpdMxiSjwbkUVdz8mNgVMzWZZBXXjYPb56Zgs"
+      "who": "swarmx-6653d3dd2c.testnet",
+      "tx": "AG8D5c5LHNFErJYWHXtsk8mKNbVdctoGjVpLEWiJfdrU"
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "BgCHsLUPgyMZbRg2Tqd2o6Gt8KTu3HJn9BrNkp2yDaxd",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "005b4629ce0f55da999a079af1d4f972db18ca5e27fc21c153e8325bd48f0a09",
-      "simulated": true
+      "who": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "tx": "HCyzqXFr6Ae9XSVE2GnaKBQmcjgoPC6pK4mBgy7xNetw",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "units": 2,
+      "of": "2",
+      "receipt": "d0fd793d94078953f3f24abb163cefc93aa87002f1ca9754b909885d752fa6c4",
+      "unitReceipts": [
+        "713c1424fdf35bbcbc1062cb6f89dff80444d073756451c2b9fb52a06adbb2bd",
+        "30403b8c682a081f5715ef44bb90f6cb11d4abb39cce757cff5772b440cf79f9"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "AtwHRnVd9BSofG9L7nHj8KXRUjtLQWi4JeuYbvLsnp62",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "911b30507bcaff7cc34d6e38ac07f949aca5e19a348e9ba794c0d5e5bc2dbf15",
-      "simulated": true
+      "who": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "tx": "5NQHBQp37sk5da1PxNS7KMoTLBoHW6JgoCmNXRGPd8js",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "units": 3,
+      "of": "3",
+      "receipt": "45a96f0f6a9d119f4f171f69b2f49c22987b29fc2675330105043bd8a10074bf",
+      "unitReceipts": [
+        "4cfe0508b202a547aeb50606efd61948fc2e439738e80f15b04b71401e807e5f",
+        "f2d79b7c7ab71d347c627b43dc5d7eaaf8a38ee6c055f85399577441bd6cbe3e",
+        "4d48431ae5c6663d5ff4b7a6b40659c492a9b6f7c7e8c940fd35abf21e018c77"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "Asxusfh5gDVtnxMBKWEALYtRAbX7wzKqwXWQ9bHHAZkf",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "ca5b395e623ba1985fe34f38fa5fdf849f09050442a5330f7938e6670a81d900",
-      "simulated": true
+      "who": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "tx": "AEciRS2GJhEQ7wjScJEzmdAaG8NsdgvUcFLRKgkTyFsD",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "units": 4,
+      "of": "4",
+      "receipt": "9d6ce4efb75ad92d92a191405a3ba6902bb8c376deb8da1947a7a7829965f2d4",
+      "unitReceipts": [
+        "bbe1166fcc055537de6a0784b5117d984b8d7cc67e8a2df33570e7d5e3872f42",
+        "cb49595462b531cb255f53c003e7ac0622be66ccdae0b5894808089d1bd3c3f8",
+        "cba105811aa7f8f942689f4802cf099ed0b7e296fe8ff32193ef5fa298a47bad",
+        "98a87019c071a90b4eeb604c740d72ee64c10eafc12177086ef90fc38b25320d"
+      ]
+    },
+    {
+      "step": "no-delivery",
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "buyer": "buyer-4.swarmx-6653d3dd2c.testnet"
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "6sZAx63C9Ue6tJh4SE5VMJB29WvpSQmAcxiCpti1V1mv",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "5be7786f9511d41cdbba47a5e69314019738da2f8dcf0efa1e2480cf73c619e8",
-      "simulated": true
+      "who": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "tx": "ANVJDJmgTmeoWuMnovQCwZMhNF1EHkpL6gyKNa6cjviN",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "units": 1,
+      "of": "2",
+      "receipt": "d448139502c5ae88c2cd02f27bf7f0e80f3f23d1092d80d23d698ee9c30468ac",
+      "unitReceipts": [
+        "d7bf9f4c1d869079c0b388f57b88edddeea22b0cd6846ad5a68e1c2aa96835db"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "yTD1t1uKceN6uuNhS3rDcz2oGTNCCDCz8k8iDxmfSzp",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "0f592fd542aabd235152d58937b7777dd33f55654e9e2516b0402d3cbd9894e9",
-      "simulated": true
+      "who": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "tx": "Ev3yK3Ji7pVx8otp3sNZ2C18nVbjS9KWTD3zLpz49QFT",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "units": 2,
+      "of": "4",
+      "receipt": "4f9abbc4303c304bd0b1192beb53476178bad3a8b97888f3cd663e2315e95170",
+      "unitReceipts": [
+        "4480c51015ce7a4d3a94e01d9b8d57d1cd75a7d8535411cd2ecf7ec651f3536d",
+        "5d9ad71e78ffbfa6d9b7d087d0c7117b07dc1e6e66acace3d731da5fe155e8d8"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "6yDF7PfgxbwvESE5Crn4X3wM8if68RZQHczfRBqKUpa9",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "49776bd2671ff4b4f32c74b141b0ce3db8b2247920f6883cf2f13fb69c1869c1",
-      "simulated": true
+      "who": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "tx": "BhChRBmdWXQYpMZYsKAhorDSmQvyoCz97kW7vpvHsRzU",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "units": 1,
+      "of": "3",
+      "receipt": "d3387d950f4ac651f31b59fc352e3432df6fc6038689b5ee442d8db0b29757a6",
+      "unitReceipts": [
+        "d104ab56490904cec1e33ddb9d194d0da0cfac3c20a15e8fc295e049de98de94"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "BaohT9qU2e4TGSYxqBPMYLTsMhLGXYbgbPo8aVEzzQF5",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "1bcaa2cecce19b6e68a49fb406cf6386df46e85dbf6d60ec8f1d59f29def55b4",
-      "simulated": true
+      "who": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "tx": "67oUBmwU9CDVjJCRc521Nv6WhcTHaqoUjMkPgrZoNx6Z",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "units": 1,
+      "of": "2",
+      "receipt": "3e64ed9e89153c9d6080cef02a052561463e80dcaaf6804da71fec0f82620317",
+      "unitReceipts": [
+        "ff02412bbb2a58985384c5e2e832d61e10e478b0b46bf496f1cf9dc264e305fd"
+      ]
     },
     {
       "step": "confirm-delivery",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "734NwffUtWSX66ySwXwGzrJYtwcCcJ3noJyzPbNCatRV",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "cb77bdadf9bcd03a80a3f2968fec42d0dad7d88331bf9482753756e693d3a250",
-      "simulated": true
+      "who": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "tx": "EzD7ckqSxQCDFH9asCivTrCFfJnwud4PKpjWxMmGim56",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "units": 2,
+      "of": "4",
+      "receipt": "9039f6078aee9427a2b4d2b5c0ac2ae310e2a8a69d4b254ad6b71b335bcf83f4",
+      "unitReceipts": [
+        "3a0c7a8aea4704ee0cc372738e72efeddf430391544e1c4ec4b3a1b3352709b7",
+        "a912ad81e5d6d1b800e5e5661fa7f00742d6b81a7430d7bfd0a02074f271cfe3"
+      ]
     },
     {
-      "step": "confirm-delivery",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "FPMTH3Y1YihD4qPe5KvcfzWpgi8jZpTazGFSxjkUEwCm",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "df50a7a6f834c31530a9e2142375579f9a0b6cc45abfee30c530251d0641f71b",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-9.swarmx-56401c0681.testnet",
-      "tx": "8u9CPEhw5ZH5JuhoFbRyE4bhoGXaHV5sX22WkBgdEZTp",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7c9a5c21d08c437932bad8ecdfc292ded27981ad8fb97fdcc75164bb9853b603",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "93Hb5moDYksCkaW4NTC75UaB7D3KwJFCjPd5ZjMiEWAk",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "14452f6ba20eab8ff8a4fc8b32e1df9f4dfdb73400e0b9882874979b7c7300a9",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "BerzsmY9GVHXuKd8xerZHwxdd3ipkfHAw2iHabUQWmhz",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "f5a08b1a84f49884eb0b9532dc45149dc5e7128dc1a4d1286bad83e849d23377",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-6.swarmx-56401c0681.testnet",
-      "tx": "GiRmaH1NPSyr2KbwGqyjfqyyNdEBBCEpDNW5jR96waVh",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "2e437104b76694d4936ed2f410afb4a28a95346f8177dfb7a628c1b9d0f15ad4",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-10.swarmx-56401c0681.testnet",
-      "tx": "sApAYaTC3xv3MYf3NsGktoy1wMvAtY6nuMK6dQUhhJr",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "eb4d531f70cafc226f3f9065155d53eee79c282077d93797f4ff0a5c5cb46c28",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-3.swarmx-56401c0681.testnet",
-      "tx": "E7kfRCb71UsQwqwFszNABZeWizfUtqTxjYudkhkam79m",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "3bf0f495dee0972c853266e2622b7967cf5d10ccbbbbbb7ede6db3a97d40ba54",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "FLQG69ZmzJUVQXAjosRbz4RRijf2KwbsoZPzeJM9oeWB",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7ea6013e00abc2bda7256f470e2f883061d1771b7a5cdf7be668bde2a7d38e03",
-      "simulated": true
-    },
-    {
-      "step": "confirm-delivery",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "CsXWxqUwbVYraQnDxU7FaDL7Y5BXZRMdmen4YGHHv7JC",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7c82f8554c0d35c83037bb05e407d57814c316b5693e06f6a6655f9c3d10fabb",
-      "simulated": true
+      "step": "no-delivery",
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "buyer": "buyer-5.swarmx-6653d3dd2c.testnet"
     },
     {
       "step": "finalize",
-      "who": "swarmx-56401c0681.testnet",
-      "tx": "3b6B7z1E457eUhjsfiUW8xRAZyTbntgXc8w3wnWjrTAP"
+      "who": "swarmx-6653d3dd2c.testnet",
+      "tx": "GSvDQ5Z2EnYM37a9qWbcqtvaaTvgJ1pnu9fzAc1bXdoG"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "J3ESyKouLHJxGejV3D1ocCtfne1knzVBSdDqHbvN4wGA",
+      "who": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "tx": "DjYEpQBytefZRxHyozxU4ovAusXYWQP2qNTRNFqxKYnP",
       "amount": "24000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-1.swarmx-56401c0681.testnet",
-      "tx": "Eravuv6VnZVisZLiX3xFff1v6mXCfTCDoyb1nMPBypuZ",
-      "amount": "11250000000000000000000"
+      "who": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "tx": "9eQw8LURR1AipZ4zmcdrTQXxgLrReXchRuv69XyqyDoV",
+      "amount": "12698412698412698412702"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "3R3jJPajBEDTAhTAvb1Lj3LALT1Q4YHwZddRpbtcGhUb",
+      "who": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "tx": "5fYjsSgbsaTJ7d9t2NBGMziPWvdWT21z2RvJAJo6K9S",
       "amount": "6000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-2.swarmx-56401c0681.testnet",
-      "tx": "6yGAs9du9SntoMCAcnC7CyzReBiRtT9B6zr8yxQatbW5",
-      "amount": "5000000000000000000000"
+      "who": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "tx": "5JdTVHiPTmvQe8B3FYeuibjmAGvmbEZCoo6RRC2P3WWT",
+      "amount": "5555555555555555555555"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-3.swarmx-56401c0681.testnet",
-      "tx": "2NtPKGJoiEWEBYKhNT9iJmo7LVq8K7MoCuij1hkygH6S",
+      "who": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "tx": "F7x4HLnuxqxynF3SrXnBAZvyS7nwPAbA3NP9bZyo8weV",
       "amount": "14000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-3.swarmx-56401c0681.testnet",
-      "tx": "Gpmtg9znV998dQyjF9SyEGKJUxEVXR8aXYTv7hVoEor3",
-      "amount": "11250000000000000000000"
+      "who": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "tx": "8FDs7CK62WDvipgJejdJfhCz9R5FasMZAh6qCZhsCyRT",
+      "amount": "12698412698412698412697"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "AtvLVKqMyVXcsaCeiGwKvKcMod4hMpDvsZSAUdhPxFWW",
+      "who": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "tx": "3g6JaD7uD5HjFsXxFUSXeuebGMBJZMkSpyhgdVz9gW28",
       "amount": "20000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-4.swarmx-56401c0681.testnet",
-      "tx": "ABPXJYfzceuXdVfbwaKP3YTQzvfEhHPXV434TSzRXHTm",
-      "amount": "11250000000000000000000"
+      "who": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "tx": "88hE81W5LuLEun3yfrQqTnZo5knPNph6XsGgmMZVBimh",
+      "amount": "12698412698412698412703"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-5.swarmx-56401c0681.testnet",
-      "tx": "CPZmSrS3QsLwAfvnhwRnCerKUqR8fNFhBXCjiKYeTo2G",
+      "who": "buyer-5.swarmx-6653d3dd2c.testnet",
+      "tx": "ArRZAz6P1H3VBZ21qB1VCBgKzp6Hj5SxjHbdPB7tbrbV",
       "amount": "12000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-5.swarmx-56401c0681.testnet",
-      "tx": "9EJQdj7RTzTc9JiJq18C1ATHB13EEmoh8Yg2Urpw37hn",
-      "amount": "11250000000000000000000"
+      "who": "buyer-5.swarmx-6653d3dd2c.testnet",
+      "tx": "4HGaidWT9ZGY4N8FVcup4tCeWd86nK4wJu7TCoeJBpfW",
+      "amount": "12698412698412698412697"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-6.swarmx-56401c0681.testnet",
-      "tx": "6DtfTwu6vwiJtH7ZJpxFYRMxoHb23n14qdTtXcP4wBj5",
+      "who": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "tx": "BUYZwcyCCP1eHMbwXpb3MW6MHusoW7rZNZ6XadhaUJEd",
       "amount": "21000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-6.swarmx-56401c0681.testnet",
-      "tx": "H27eKtfnCjqpHysfL6S2CAbm2S6BunXRMmPq1XJPwy9b",
-      "amount": "11250000000000000000000"
+      "who": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "tx": "9ibjJeX81Sve4mztpmUdW3j2kQFPBZGqFrPz8VZ8vNBw",
+      "amount": "12698412698412698412697"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "DGw5vbbzZsY27cGDd153xhxfZutTSTiPG6WgUq1y3F79",
+      "who": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "tx": "DAFmhZckbNd2v5bEFLHfva7iaQ9mVJhJjM5tdUxzRRs4",
       "amount": "2000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-7.swarmx-56401c0681.testnet",
-      "tx": "Ea2KUDzSTtLb6U6LzqNgGbr59SysbDwAjut5iey6vKsv",
-      "amount": "5000000000000000000000"
+      "who": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "tx": "3DNjPHagmuiYKs5vMWJe99PorDLjFpWGgMbhPhDAspbD",
+      "amount": "5555555555555555555555"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "FRZrWmdgBUmx2Jh3c3KVHvS4YE2ExcYeuEwmcmQbpviW",
+      "who": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "tx": "7v9BvD87shQTADmyFWznREzG2FsAixxBHWweS1Nfkxow",
       "amount": "32000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-8.swarmx-56401c0681.testnet",
-      "tx": "DZy1bmdifVHqNZsNnrS2yo4t9h2sBpcamnotrQAAXPR5",
-      "amount": "11250000000000000000000"
+      "who": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "tx": "81R1HDZCuYMqsEGwfuEXYf9KezoBYBcXUscucNW9Gz1x",
+      "amount": "12698412698412698412697"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-9.swarmx-56401c0681.testnet",
-      "tx": "g1qnoX3vfbWNp7LoTjpSgkcdQB5fmmXGpCTsrVLvPsB",
+      "who": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "tx": "3N8JyoRH8pFkCVWJTQQy1Dm3xuSnw1Xf77TvhLKZCdBX",
       "amount": "10000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "buyer-9.swarmx-56401c0681.testnet",
-      "tx": "9GCEzA8mQmY5pyxVYPCA7wcfUP7LRK3TPiym6hdSYpXe",
-      "amount": "11250000000000000000000"
+      "who": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "tx": "AM32qs5ixx2rz2Dy3SZCrExU21t78ibqZhg1fBkaxQrX",
+      "amount": "12698412698412698412697"
     },
     {
       "step": "withdraw-token",
-      "who": "buyer-10.swarmx-56401c0681.testnet",
-      "tx": "CWoFtGzz8aZdtmuWSURM84ZKE7zefGqgTKQaKXYidT1x",
-      "amount": "24000000000000000000000"
-    },
-    {
-      "step": "withdraw-near",
-      "who": "buyer-10.swarmx-56401c0681.testnet",
-      "tx": "GvxASwpB6WUnNK2GmQsKfKX5cXEjhM9eE1pdtjutVLbf",
-      "amount": "11250000000000000000000"
-    },
-    {
-      "step": "withdraw-token",
-      "who": "seller-1.swarmx-56401c0681.testnet",
-      "tx": "7kV5H2bHqVQTm48nNtjsLZVsLFUq78JPJAnWSgQyaZkr",
+      "who": "seller-1.swarmx-6653d3dd2c.testnet",
+      "tx": "4USbLWsF7TXj6xXkkprwFqAkVV69FkvxGoWXNQwZV7NL",
       "amount": "45000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "seller-1.swarmx-56401c0681.testnet",
-      "tx": "EfbmyUnMsweCL8AErWWKmkCJGdxJq8ptQd7W2WWqHnVi",
+      "who": "seller-1.swarmx-6653d3dd2c.testnet",
+      "tx": "HwzoddvUbCw5WoaEe8ikjGByb5cu3mgT1Nwr5DD8mMaB",
       "amount": "50000000000000000000000"
     },
     {
       "step": "withdraw-token",
-      "who": "seller-2.swarmx-56401c0681.testnet",
-      "tx": "6p4QWVZr5Dw135cs3AC4CS6m5djELd1pW8v8VXwz6MZ1",
-      "amount": "48000000000000000000000"
+      "who": "seller-2.swarmx-6653d3dd2c.testnet",
+      "tx": "GHfu2pYAa13AHHcMoJRLQFPWCWp13Bw5MLEJM8qsMP1H",
+      "amount": "42000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "seller-3.swarmx-56401c0681.testnet",
-      "tx": "wTM9jx4PzGa9XUsEHAb1kYEwWH3RJcDFwXRhYnfBuve",
+      "who": "seller-3.swarmx-6653d3dd2c.testnet",
+      "tx": "GazD4faqEjBQ8arJVdUvPZa1ciP96a4JdCRhq7wPoDEV",
       "amount": "50000000000000000000000"
     },
     {
       "step": "withdraw-near",
-      "who": "seller-5.swarmx-56401c0681.testnet",
-      "tx": "B3dnsZBMjhy5HmyXG1hvSzjeZ9EhZpagZ1VLEqFpvZJo",
+      "who": "seller-5.swarmx-6653d3dd2c.testnet",
+      "tx": "7QUbmWs3jAzAdhGcXy581ciCqtzRtSvXjBZZKhv422UF",
       "amount": "50000000000000000000000"
     },
     {
       "step": "lock-contract",
-      "who": "exchange.swarmx-56401c0681.testnet",
-      "tx": "A3WRunvdh3nAfLBot2zjs3ttEU2dhKkH9aMkj5BzayE9"
+      "who": "exchange.swarmx-6653d3dd2c.testnet",
+      "tx": "DwaZPJwSS3QdwEPjBpGLY8ncyrniE48FhEF1sfBfv3mQ"
     }
   ],
-  "contract": "exchange.swarmx-56401c0681.testnet",
-  "wasmSha256": "d010a98860ca4b0bfde50c5878bcee435a870a9b6ef25e41485f1389dbe225d0",
+  "contract": "exchange.swarmx-6653d3dd2c.testnet",
+  "wasmSha256": "5a0da239650f75d17899c595595d02e04ccc01ab378d4357974e2a1fc60ebb47",
   "cleared": {
     "status": "Cleared",
-    "total": "165000000000000000000000",
+    "total": "147000000000000000000000",
     "lines": [
       {
-        "buyer": "buyer-7.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-7.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "5000000000000000000000"
       },
       {
-        "buyer": "buyer-2.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "unit_price": "5000000000000000000000"
       },
       {
-        "buyer": "buyer-4.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "5000000000000000000000"
       },
       {
-        "buyer": "buyer-4.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "1",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-9.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-9.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-1.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-1.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-6.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-6.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-10.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
-        "quantity": "3",
-        "unit_price": "6000000000000000000000"
-      },
-      {
-        "buyer": "buyer-3.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-3.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-8.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-8.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "6000000000000000000000"
       },
       {
-        "buyer": "buyer-5.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-5.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "1",
         "unit_price": "6000000000000000000000"
       }
     ]
   },
   "balances": {
-    "buyer-1.swarmx-56401c0681.testnet": {
+    "buyer-1.swarmx-6653d3dd2c.testnet": {
       "token": "24000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412702"
     },
-    "buyer-2.swarmx-56401c0681.testnet": {
+    "buyer-2.swarmx-6653d3dd2c.testnet": {
       "token": "6000000000000000000000",
-      "near": "5000000000000000000000"
+      "near": "5555555555555555555555"
     },
-    "buyer-3.swarmx-56401c0681.testnet": {
+    "buyer-3.swarmx-6653d3dd2c.testnet": {
       "token": "14000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412697"
     },
-    "buyer-4.swarmx-56401c0681.testnet": {
+    "buyer-4.swarmx-6653d3dd2c.testnet": {
       "token": "20000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412703"
     },
-    "buyer-5.swarmx-56401c0681.testnet": {
+    "buyer-5.swarmx-6653d3dd2c.testnet": {
       "token": "12000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412697"
     },
-    "buyer-6.swarmx-56401c0681.testnet": {
+    "buyer-6.swarmx-6653d3dd2c.testnet": {
       "token": "21000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412697"
     },
-    "buyer-7.swarmx-56401c0681.testnet": {
+    "buyer-7.swarmx-6653d3dd2c.testnet": {
       "token": "2000000000000000000000",
-      "near": "5000000000000000000000"
+      "near": "5555555555555555555555"
     },
-    "buyer-8.swarmx-56401c0681.testnet": {
+    "buyer-8.swarmx-6653d3dd2c.testnet": {
       "token": "32000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412697"
     },
-    "buyer-9.swarmx-56401c0681.testnet": {
+    "buyer-9.swarmx-6653d3dd2c.testnet": {
       "token": "10000000000000000000000",
-      "near": "11250000000000000000000"
+      "near": "12698412698412698412697"
     },
-    "buyer-10.swarmx-56401c0681.testnet": {
-      "token": "24000000000000000000000",
-      "near": "11250000000000000000000"
+    "buyer-10.swarmx-6653d3dd2c.testnet": {
+      "token": "0",
+      "near": "0"
     },
-    "seller-1.swarmx-56401c0681.testnet": {
+    "seller-1.swarmx-6653d3dd2c.testnet": {
       "token": "45000000000000000000000",
       "near": "50000000000000000000000"
     },
-    "seller-2.swarmx-56401c0681.testnet": {
-      "token": "48000000000000000000000",
+    "seller-2.swarmx-6653d3dd2c.testnet": {
+      "token": "42000000000000000000000",
       "near": "0"
     },
-    "seller-3.swarmx-56401c0681.testnet": {
+    "seller-3.swarmx-6653d3dd2c.testnet": {
       "token": "0",
       "near": "50000000000000000000000"
     },
-    "seller-4.swarmx-56401c0681.testnet": {
+    "seller-4.swarmx-6653d3dd2c.testnet": {
       "token": "0",
       "near": "0"
     },
-    "seller-5.swarmx-56401c0681.testnet": {
+    "seller-5.swarmx-6653d3dd2c.testnet": {
       "token": "0",
       "near": "50000000000000000000000"
     }
   },
   "round": {
     "id": "0",
-    "coordinator": "swarmx-56401c0681.testnet",
-    "resource": "inference completions (simulated delivery)",
-    "demand_end": "1794694251855619430",
-    "commit_end": "1794694296855619430",
-    "reveal_end": "1794694341855619430",
-    "delivery_end": "1794694461855619430",
+    "coordinator": "swarmx-6653d3dd2c.testnet",
+    "resource": "NEAR AI Cloud TEE completions",
+    "demand_end": "1794695217433713730",
+    "commit_end": "1794695262433713730",
+    "reveal_end": "1794695307433713730",
+    "delivery_end": "1794695607433713730",
     "seller_bond": "50000000000000000000000",
     "status": "Finalized",
     "orders": [
       {
-        "buyer": "buyer-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-1.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "budget": "36000000000000000000000"
       },
       {
-        "buyer": "buyer-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "budget": "21000000000000000000000"
       },
       {
-        "buyer": "buyer-3.swarmx-56401c0681.testnet",
+        "buyer": "buyer-3.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "budget": "20000000000000000000000"
       },
       {
-        "buyer": "buyer-4.swarmx-56401c0681.testnet",
+        "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
         "quantity": "5",
         "budget": "40000000000000000000000"
       },
       {
-        "buyer": "buyer-5.swarmx-56401c0681.testnet",
+        "buyer": "buyer-5.swarmx-6653d3dd2c.testnet",
         "quantity": "1",
         "budget": "12000000000000000000000"
       },
       {
-        "buyer": "buyer-6.swarmx-56401c0681.testnet",
+        "buyer": "buyer-6.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "budget": "27000000000000000000000"
       },
       {
-        "buyer": "buyer-7.swarmx-56401c0681.testnet",
+        "buyer": "buyer-7.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "budget": "12000000000000000000000"
       },
       {
-        "buyer": "buyer-8.swarmx-56401c0681.testnet",
+        "buyer": "buyer-8.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "budget": "44000000000000000000000"
       },
       {
-        "buyer": "buyer-9.swarmx-56401c0681.testnet",
+        "buyer": "buyer-9.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "budget": "16000000000000000000000"
-      },
-      {
-        "buyer": "buyer-10.swarmx-56401c0681.testnet",
-        "quantity": "3",
-        "budget": "30000000000000000000000"
       }
     ],
     "commitments": [
       {
-        "seller": "seller-1.swarmx-56401c0681.testnet",
-        "hash": "edc5aa559929e07536f857c49dc2b784599594ddf9147a478e7c27e62c2baac0",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+        "hash": "7f14b91565241fc91891ed60da0b91d2cc39e857a12fe232b901d2245c3825ca",
         "bond": "50000000000000000000000"
       },
       {
-        "seller": "seller-2.swarmx-56401c0681.testnet",
-        "hash": "d3b81dbf45a2fe496eb3c0222a99ea17340f9649ffadc10a05cb8b6208e4fbc2",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+        "hash": "a9ded22f293d05194fd8d4e4d714916316357a9f405858bda060604170583bbb",
         "bond": "50000000000000000000000"
       },
       {
-        "seller": "seller-3.swarmx-56401c0681.testnet",
-        "hash": "f1bf5db348d48a5f0a7de0eea166315c0a84989274d973b537aa3d25f41d17f2",
+        "seller": "seller-3.swarmx-6653d3dd2c.testnet",
+        "hash": "094da83ad2e7bc8f5e5b20ea7d6900078c46dcbee70ae883c7ac0d23dbd531fd",
         "bond": "50000000000000000000000"
       },
       {
-        "seller": "seller-4.swarmx-56401c0681.testnet",
-        "hash": "62a98d870b70341612bcc09362c86a5440ddca6cdddd4102d5a140642e77a170",
+        "seller": "seller-4.swarmx-6653d3dd2c.testnet",
+        "hash": "89209f09615c06bc4a6311435e3051c8487a6313ce08f85fdfb8616e79c36a85",
         "bond": "50000000000000000000000"
       },
       {
-        "seller": "seller-5.swarmx-56401c0681.testnet",
-        "hash": "270c1bbae71c5b8a7af2bcf829021d133271176c31a8ae35291c7df634ea9a69",
+        "seller": "seller-5.swarmx-6653d3dd2c.testnet",
+        "hash": "1f1d37a89bf8268cf918d20546dd3b1c5817dde7b9cdee774b42e671eaddaa13",
         "bond": "50000000000000000000000"
       }
     ],
     "offers": [
       {
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "capacity": "9",
         "unit_price": "5000000000000000000000"
       },
       {
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "capacity": "20",
         "unit_price": "6000000000000000000000"
       },
       {
-        "seller": "seller-3.swarmx-56401c0681.testnet",
+        "seller": "seller-3.swarmx-6653d3dd2c.testnet",
         "capacity": "29",
         "unit_price": "7700000000000000000000"
       },
       {
-        "seller": "seller-5.swarmx-56401c0681.testnet",
+        "seller": "seller-5.swarmx-6653d3dd2c.testnet",
         "capacity": "29",
         "unit_price": "10350000000000000000000"
       }
     ],
     "lines": [
       {
-        "buyer": "buyer-7.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-7.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "5000000000000000000000",
         "delivered": "2",
         "receipts": [
-          "005b4629ce0f55da999a079af1d4f972db18ca5e27fc21c153e8325bd48f0a09",
-          "911b30507bcaff7cc34d6e38ac07f949aca5e19a348e9ba794c0d5e5bc2dbf15"
-        ]
+          "d0fd793d94078953f3f24abb163cefc93aa87002f1ca9754b909885d752fa6c4"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-2.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "unit_price": "5000000000000000000000",
         "delivered": "3",
         "receipts": [
-          "ca5b395e623ba1985fe34f38fa5fdf849f09050442a5330f7938e6670a81d900",
-          "5be7786f9511d41cdbba47a5e69314019738da2f8dcf0efa1e2480cf73c619e8",
-          "0f592fd542aabd235152d58937b7777dd33f55654e9e2516b0402d3cbd9894e9"
-        ]
+          "45a96f0f6a9d119f4f171f69b2f49c22987b29fc2675330105043bd8a10074bf"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-4.swarmx-56401c0681.testnet",
-        "seller": "seller-1.swarmx-56401c0681.testnet",
+        "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-1.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "5000000000000000000000",
         "delivered": "4",
         "receipts": [
-          "49776bd2671ff4b4f32c74b141b0ce3db8b2247920f6883cf2f13fb69c1869c1",
-          "1bcaa2cecce19b6e68a49fb406cf6386df46e85dbf6d60ec8f1d59f29def55b4",
-          "cb77bdadf9bcd03a80a3f2968fec42d0dad7d88331bf9482753756e693d3a250",
-          "df50a7a6f834c31530a9e2142375579f9a0b6cc45abfee30c530251d0641f71b"
-        ]
+          "9d6ce4efb75ad92d92a191405a3ba6902bb8c376deb8da1947a7a7829965f2d4"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-4.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "1",
         "unit_price": "6000000000000000000000",
         "delivered": "0",
-        "receipts": []
+        "receipts": [],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-9.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-9.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "6000000000000000000000",
         "delivered": "1",
         "receipts": [
-          "7c9a5c21d08c437932bad8ecdfc292ded27981ad8fb97fdcc75164bb9853b603"
-        ]
+          "d448139502c5ae88c2cd02f27bf7f0e80f3f23d1092d80d23d698ee9c30468ac"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-1.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-1.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "6000000000000000000000",
         "delivered": "2",
         "receipts": [
-          "14452f6ba20eab8ff8a4fc8b32e1df9f4dfdb73400e0b9882874979b7c7300a9",
-          "f5a08b1a84f49884eb0b9532dc45149dc5e7128dc1a4d1286bad83e849d23377"
-        ]
+          "4f9abbc4303c304bd0b1192beb53476178bad3a8b97888f3cd663e2315e95170"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-6.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-6.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "3",
         "unit_price": "6000000000000000000000",
         "delivered": "1",
         "receipts": [
-          "2e437104b76694d4936ed2f410afb4a28a95346f8177dfb7a628c1b9d0f15ad4"
-        ]
+          "d3387d950f4ac651f31b59fc352e3432df6fc6038689b5ee442d8db0b29757a6"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-10.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
-        "quantity": "3",
-        "unit_price": "6000000000000000000000",
-        "delivered": "1",
-        "receipts": [
-          "eb4d531f70cafc226f3f9065155d53eee79c282077d93797f4ff0a5c5cb46c28"
-        ]
-      },
-      {
-        "buyer": "buyer-3.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-3.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "2",
         "unit_price": "6000000000000000000000",
         "delivered": "1",
         "receipts": [
-          "3bf0f495dee0972c853266e2622b7967cf5d10ccbbbbbb7ede6db3a97d40ba54"
-        ]
+          "3e64ed9e89153c9d6080cef02a052561463e80dcaaf6804da71fec0f82620317"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-8.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-8.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "4",
         "unit_price": "6000000000000000000000",
         "delivered": "2",
         "receipts": [
-          "7ea6013e00abc2bda7256f470e2f883061d1771b7a5cdf7be668bde2a7d38e03",
-          "7c82f8554c0d35c83037bb05e407d57814c316b5693e06f6a6655f9c3d10fabb"
-        ]
+          "9039f6078aee9427a2b4d2b5c0ac2ae310e2a8a69d4b254ad6b71b335bcf83f4"
+        ],
+        "votes": [],
+        "rejected": false
       },
       {
-        "buyer": "buyer-5.swarmx-56401c0681.testnet",
-        "seller": "seller-2.swarmx-56401c0681.testnet",
+        "buyer": "buyer-5.swarmx-6653d3dd2c.testnet",
+        "seller": "seller-2.swarmx-6653d3dd2c.testnet",
         "quantity": "1",
         "unit_price": "6000000000000000000000",
         "delivered": "0",
-        "receipts": []
+        "receipts": [],
+        "votes": [],
+        "rejected": false
       }
     ],
-    "total": "165000000000000000000000"
+    "total": "147000000000000000000000",
+    "reviewers": [],
+    "brief": null
   },
   "deliveries": [
     {
-      "buyer": "buyer-7.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "005b4629ce0f55da999a079af1d4f972db18ca5e27fc21c153e8325bd48f0a09",
-      "simulated": true
+      "buyer": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "713c1424fdf35bbcbc1062cb6f89dff80444d073756451c2b9fb52a06adbb2bd",
+      "completionId": "e8a23d9d71a54ee1acba4596ae08ff01",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:b338ba87016a2e7aad27dff70eb1137e2eee7b1795281aade4a158ff819e3984:23620aa792af87fdee457e5bb38234d52e46522910e9de91a44c51df86916367",
+        "signature": "0x5f3af4cd613482cfec9a9da20ba02cc251ae43870df31d65b2f32362702a3d2b749a319f291e386ec60ee1ad68c355de31f6942a764c76acb891d40873d7eb571b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-7.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "911b30507bcaff7cc34d6e38ac07f949aca5e19a348e9ba794c0d5e5bc2dbf15",
-      "simulated": true
+      "buyer": "buyer-7.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "30403b8c682a081f5715ef44bb90f6cb11d4abb39cce757cff5772b440cf79f9",
+      "completionId": "2ded41ed05b84c5ebe7a96a0be35628c",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:87052f31cb1dcd92f4040879151ab2a5c2a3f7ffb0fa263917d7bb5d399c13cb:6d4e110ba507a17099bb03083e70e07f04f01b1a3ea564c8dd08e102ecad97d5",
+        "signature": "0x352418c223a109a0567b3bca6fa9653948d21cebf6bfe35e8d2e27caa5720c5465888d717e64913d5e9b05efa974157abe5b17935d41e2c6d73d6f01f0ac5e791b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-2.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "ca5b395e623ba1985fe34f38fa5fdf849f09050442a5330f7938e6670a81d900",
-      "simulated": true
+      "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "4cfe0508b202a547aeb50606efd61948fc2e439738e80f15b04b71401e807e5f",
+      "completionId": "6dd4c4060aa54e9abd4b1769e5fcc0db",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:76a69408add189c20eba60d0ade879e34888b73b4647ad8bbd99c4c79419664d:3fc494b104a16236d9f566b5b19e4ab104d8bcd5f3f0d871320a02fc37636f16",
+        "signature": "0xa23a2239bbe4100ca1abf348301f1389100714e5eb928b33db247583b22635945b1276feac400d4d0f15e4c3accba4f9f2c06545ba99849595c7b3a19c024f471b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-2.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "5be7786f9511d41cdbba47a5e69314019738da2f8dcf0efa1e2480cf73c619e8",
-      "simulated": true
+      "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "f2d79b7c7ab71d347c627b43dc5d7eaaf8a38ee6c055f85399577441bd6cbe3e",
+      "completionId": "76a3502a5cba42c49631c28cdc1fff5a",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:1fd8799cc88472c61c2fbdc5e89d1f28113ac9a72edd989bdb0d2ca71d0cebd7:cb6f46ec4d6b289414a5442026efe8996db7901a2db5894d805f39001d981a37",
+        "signature": "0xd5b90119adfb85d4202bd997c6e95e3b46daeaea44481254efb08143931c996723e4e6d672f62974117fcb35aee79f05e8e6ce4e16a90e1537f6f24c10c5ac4b1b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-2.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "0f592fd542aabd235152d58937b7777dd33f55654e9e2516b0402d3cbd9894e9",
-      "simulated": true
+      "buyer": "buyer-2.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "4d48431ae5c6663d5ff4b7a6b40659c492a9b6f7c7e8c940fd35abf21e018c77",
+      "completionId": "399d7e7e406c4858bcca857ecf56145c",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:b3b573076e98cddd3095ec6c69647aab4740812c99df55540f45e479f0856f9b:4c41fb6dcf1678bd5a02a0cd8bff3a26ddffbd9afae09b44d308d503ad61e436",
+        "signature": "0xb7f59fe169e04b4a8ee0dbdf9e03c4181df4fff61e72d47925da51c56824136d77422da4d0bb9365c2611d739e598a0e8e812af1b9916c0222481fd1081b44be1b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-4.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "49776bd2671ff4b4f32c74b141b0ce3db8b2247920f6883cf2f13fb69c1869c1",
-      "simulated": true
+      "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "bbe1166fcc055537de6a0784b5117d984b8d7cc67e8a2df33570e7d5e3872f42",
+      "completionId": "09e1e567b2f34bc6a4eaa5b385ba640c",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:abff8b7b469d30f9cbaea12ba9c2a97b28bb9cc478ebf989922a671e65c18ad7:52cd086c14efa2c0584e84a5a01c25d778c339dedeacf67862d74408c6e7ed25",
+        "signature": "0x626063445730524ee14e2fb2032a8fc3f24b50ad2f8c14b5eda9910aecd4e92a00cb6451ffc74e94355d451674703c1ac3ae275b2fe85e8cdbea4a50c455e1571c",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-4.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "1bcaa2cecce19b6e68a49fb406cf6386df46e85dbf6d60ec8f1d59f29def55b4",
-      "simulated": true
+      "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "cb49595462b531cb255f53c003e7ac0622be66ccdae0b5894808089d1bd3c3f8",
+      "completionId": "f4d2b7f135774e92a3d7fc3577806bf2",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:fe6154c044b0db72e922499cacdc2011c1424b2c3619665f38a53809e482f7bb:c9e2763e053a7225401c4c1c69e4d3a26d8e24cc3291de7f7b15b35626ce19eb",
+        "signature": "0xbd7aa5ba8b5b5a66b78db1ce5464a6d6668b4f153a87b4e15b48842c72b92764234b619baff2742ccd28df4d468926d52a02a8257b2eef56b90b33f5873f3da61b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-4.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "cb77bdadf9bcd03a80a3f2968fec42d0dad7d88331bf9482753756e693d3a250",
-      "simulated": true
+      "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "cba105811aa7f8f942689f4802cf099ed0b7e296fe8ff32193ef5fa298a47bad",
+      "completionId": "35a783e30a724d5cb0a240b0b6b58a4d",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:bf00fd1c8c042467a486f3e6b8b761c4fb00b703dcb2e2e00db8f48ddacf6d20:830c89cd2f1484ff6ae0819512899e434faf7b68c8a277a3a1082fa1a1b94a7d",
+        "signature": "0xc55903b897d5f69abb2fa70a1a55c71f4968c50a43656c74cedb4056829e54143f52320d9fbcc33ca8e6cac76c36e15116e9e7e67ac4359489003d05a58cbf911b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-4.swarmx-56401c0681.testnet",
-      "seller": "seller-1.swarmx-56401c0681.testnet",
-      "receipt": "df50a7a6f834c31530a9e2142375579f9a0b6cc45abfee30c530251d0641f71b",
-      "simulated": true
+      "buyer": "buyer-4.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-1.swarmx-6653d3dd2c.testnet",
+      "model": "z-ai/glm-5.3-flash",
+      "receipt": "98a87019c071a90b4eeb604c740d72ee64c10eafc12177086ef90fc38b25320d",
+      "completionId": "6d23fd4015954520b8dc312adf962245",
+      "signature": {
+        "text": "z-ai/glm-5.3-flash:cf8d6185cd17e57c96615229e96dba3da1dbc0baea4f607b509cd0a19ea54175:3d2c2e7a321b1d03cc797b33982a43932c2012d5bc6049618e5099460af560d5",
+        "signature": "0x47209d57b50a54246e3f9e4e99d75ee7be31253d79157d3b30a4d93659bdd922753c5dccf84ee863b0be32b68cb235fbd70c22015d1005b3e6f9d760e0b6e3531b",
+        "signing_address": "0x3b753b4406613c5e70ae640508632b600424fa0c",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-9.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7c9a5c21d08c437932bad8ecdfc292ded27981ad8fb97fdcc75164bb9853b603",
-      "simulated": true
+      "buyer": "buyer-9.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "d7bf9f4c1d869079c0b388f57b88edddeea22b0cd6846ad5a68e1c2aa96835db",
+      "completionId": "a7e8de157bf246e3bb8337dc777ca0e8",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:6b973930c0ab0b09134718b30cd89186b7cdfb48b688d8bc2622165bedf23f72:f6e005d0aeb91786665b3e23b55a9f70f2eb7590677f2b898af0eb1ce4bfb613",
+        "signature": "0x38fc86dd1220a30e50b7ba5596afa34fcb5c7fd75dae259c03fe28863f2a40cc0eed0ad664c56c00f37bf3a7b20fee8b1347ffee84ab97f5db0a9436732962d91b",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-1.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "14452f6ba20eab8ff8a4fc8b32e1df9f4dfdb73400e0b9882874979b7c7300a9",
-      "simulated": true
+      "buyer": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "4480c51015ce7a4d3a94e01d9b8d57d1cd75a7d8535411cd2ecf7ec651f3536d",
+      "completionId": "2fa00fb867894aa78b6c521820c833f8",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:43233034a756048d1f356a805eaf3c31a503a12765ebbff66d1d03a320615b81:d5a2dd2799d06acb96eebe14b37a38c60856375b2f7d0d2f06fcd6a49f0a7be8",
+        "signature": "0x7d0b171a18c7d198ce11535dcdb6d5bd7dbe0b79e5771e524271d8f5cadd792326e7b5206c94619825d5ff982182bcb04d03488b9ca881e81e60de4df788aa1e1c",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-1.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "f5a08b1a84f49884eb0b9532dc45149dc5e7128dc1a4d1286bad83e849d23377",
-      "simulated": true
+      "buyer": "buyer-1.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "5d9ad71e78ffbfa6d9b7d087d0c7117b07dc1e6e66acace3d731da5fe155e8d8",
+      "completionId": "2da8d21042114c2da6a57b974f30a491",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:9368233659a2288087cfc077a628f12c3d354dd5db015d90139250d739a1f290:c931b22a9ff9755464c45ef575b01116e12b15636a4c8a17805c9aeed7693424",
+        "signature": "0xbb9692bc17cb659bf6f8f30b143bbe00dc351093af2e6b421f4a1287c53b04b701213e8b6aebc779f70834df56551b5e85e71c37d7f58987c1d1f2304efbaaa61b",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-6.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "2e437104b76694d4936ed2f410afb4a28a95346f8177dfb7a628c1b9d0f15ad4",
-      "simulated": true
+      "buyer": "buyer-6.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "d104ab56490904cec1e33ddb9d194d0da0cfac3c20a15e8fc295e049de98de94",
+      "completionId": "1262b667ee7a434c920f116ae52bc3f8",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:5da679a362127e7315ab3b53379320db67b74dbb06cc95347c25b8cd9475646a:311d098ac883bb4fb2ded8aa3c87850b3207e2b95c05a3a2ef32df469c52579c",
+        "signature": "0xc93f07c35b1c430e9b50277c23d694681c4fd6c1e37c4b20a60786830c4a09e22eb0d436eb137948f149f687adc70cb6331361154f7ee52249fe4290ba2bbb131b",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-10.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "eb4d531f70cafc226f3f9065155d53eee79c282077d93797f4ff0a5c5cb46c28",
-      "simulated": true
+      "buyer": "buyer-3.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "ff02412bbb2a58985384c5e2e832d61e10e478b0b46bf496f1cf9dc264e305fd",
+      "completionId": "939c468a53444b4dab43d7a363f74030",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:fe906035d8d4458742cae52509e4b6f9d376911f8191960ca7d701d53a2ada61:e367e68a7d5227666ce861ce191d0ebc27f3f401b65398233057b54df289146b",
+        "signature": "0x870b2e82da3693569ece731f2913fa7be258e9145507ed4d42fb3763903f09a345eda39a67e9339a52f1e5bb0b01bb107a28e7625576d3649c5c2f8d5693090d1c",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-3.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "3bf0f495dee0972c853266e2622b7967cf5d10ccbbbbbb7ede6db3a97d40ba54",
-      "simulated": true
+      "buyer": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "3a0c7a8aea4704ee0cc372738e72efeddf430391544e1c4ec4b3a1b3352709b7",
+      "completionId": "cb75e94bad1f410a9bd3c5dae9a72de7",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:5644a4590eaba694712e76d36885c27cf8b572fe2dd12abca0f7b96d0b5e8b5a:566e642625c833ced4cd1ce08e52caffad43773731101b4f2c6ab98c0aafa335",
+        "signature": "0x5d167557f85b05050b7037ccf55a75105672b71ebe061672ee1dad254bcd07c43a51f0d948991e6cd7dc73647a3076878c57b4d807170d41c0d0d4ecaf5379e11b",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     },
     {
-      "buyer": "buyer-8.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7ea6013e00abc2bda7256f470e2f883061d1771b7a5cdf7be668bde2a7d38e03",
-      "simulated": true
-    },
-    {
-      "buyer": "buyer-8.swarmx-56401c0681.testnet",
-      "seller": "seller-2.swarmx-56401c0681.testnet",
-      "receipt": "7c82f8554c0d35c83037bb05e407d57814c316b5693e06f6a6655f9c3d10fabb",
-      "simulated": true
+      "buyer": "buyer-8.swarmx-6653d3dd2c.testnet",
+      "seller": "seller-2.swarmx-6653d3dd2c.testnet",
+      "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+      "receipt": "a912ad81e5d6d1b800e5e5661fa7f00742d6b81a7430d7bfd0a02074f271cfe3",
+      "completionId": "8cfff158aee346c1a5839f6eef20a9bd",
+      "signature": {
+        "text": "Qwen/Qwen3.6-35B-A3B-FP8:9d3f2765a69a4d1a3c9462c0f5303ee64768ee9194e5c6d48e86c7e9b87a257b:122564744b6ac1c548e01d757733512f25fe1c5aecebfc16512cbbcdb4897de4",
+        "signature": "0x5d8295ef4ee044b3a5b74e682f5aa04d360b8ea8d2f7b184d97d688044edcd4b2df7861dcfaa3634c3ee292330067d5a15e685df35676a1993d248ba187413af1c",
+        "signing_address": "0xfdbd7952498b333206f360d71d97a1e0961e8ddf",
+        "signing_algo": "ecdsa",
+        "signature_kind": "provider_tee"
+      }
     }
   ]
 }

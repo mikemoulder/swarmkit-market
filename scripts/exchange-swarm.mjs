@@ -15,18 +15,18 @@ const arg = (name) => { const i = process.argv.indexOf(name); return i > 0 ? pro
 if (!process.argv.includes("--faucet-testnet")) throw new Error("Pass --faucet-testnet to create disposable testnet accounts.");
 const wasm = await readFile(arg("--wasm") ?? "../../contracts/exchange/target/near/swarmkit_exchange.wasm");
 const NEARAI = process.env.NEARAI_API_KEY;
-const MODEL = process.env.NEARAI_MODEL ?? "deepseek-ai/DeepSeek-V3.1";
+const MODELS = ["z-ai/glm-5.3-flash", "Qwen/Qwen3.6-35B-A3B-FP8", "deepseek-ai/DeepSeek-V4.1-Flash-1017"]; // NEAR AI Cloud private (TEE) models
 const TOKEN = "wrap.testnet";
 const TGAS = 1_000_000_000_000n;
 const NEAR = 10n ** 24n;
 const MILLI = 10n ** 21n; // 0.001 wNEAR: the price unit
 const BOND = 50n * MILLI;
-const PHASE_MS = { demand: 75_000, commit: 45_000, reveal: 45_000, delivery: 180_000 };
+const PHASE_MS = { demand: 75_000, commit: 45_000, reveal: 45_000, delivery: 300_000 };
 const sha = (text) => createHash("sha256").update(text).digest("hex");
 const sleepUntil = async (ns) => { const ms = Number(BigInt(ns) / 1_000_000n) - Date.now() + 2500; if (ms > 0) await new Promise((r) => setTimeout(r, ms)); };
 
 const provider = new JsonRpcProvider({ url: process.env.NEAR_TESTNET_RPC ?? "https://test.rpc.fastnear.com" });
-const evidence = { network: "testnet", token: TOKEN, delivery: NEARAI ? `NEAR AI Cloud (${MODEL})` : "simulated", steps: [] };
+const evidence = { network: "testnet", token: TOKEN, delivery: NEARAI ? `NEAR AI Cloud TEE models: ${MODELS.join(", ")}` : "simulated", steps: [] };
 const record = (step, who, tx, extra = {}) => {
   const hash = tx?.transaction?.hash ?? tx?.transaction_outcome?.id;
   evidence.steps.push({ step, who, tx: hash, ...extra });
@@ -65,11 +65,11 @@ const buyerPlans = [
 ]; // [label, units wanted, max price per unit in milli-wNEAR]
 const sellerPlans = [
   // [label, capacity, cost, markup %, behaviour]
-  ["seller-1", 9, 4, 25, "honest"],     // cheapest, too small for the whole pool
-  ["seller-2", 20, 5, 20, "short"],     // delivers only half of what it sold
-  ["seller-3", 30, 7, 10, "honest"],
-  ["seller-4", 30, 3, 10, "no-reveal"], // cheapest bid, then disappears: loses its bond
-  ["seller-5", 30, 9, 15, "honest"],
+  ["seller-1", 9, 4, 25, "honest", MODELS[0]],     // cheapest, too small for the whole pool
+  ["seller-2", 20, 5, 20, "short", MODELS[1]],     // delivers only half of what it sold
+  ["seller-3", 30, 7, 10, "honest", MODELS[2]],
+  ["seller-4", 30, 3, 10, "no-reveal", MODELS[0]], // cheapest bid, then disappears: loses its bond
+  ["seller-5", 30, 9, 15, "honest", MODELS[1]],
 ];
 const buyers = [];
 for (const [label] of buyerPlans) buyers.push(await sub(label, 15n * NEAR / 100n));
@@ -94,7 +94,7 @@ for (const [i, buyer] of buyers.entries()) {
 
 // 3. Open a round. The parent account is the coordinator: it has no power over money.
 const opened = await call(parent, exchange.accountId, "open_round", {
-  resource: NEARAI ? `NEAR AI Cloud completions (${MODEL})` : "inference completions (simulated delivery)",
+  resource: NEARAI ? "NEAR AI Cloud TEE completions" : "inference completions (simulated delivery)",
   demand_ms: String(PHASE_MS.demand), commit_ms: String(PHASE_MS.commit), reveal_ms: String(PHASE_MS.reveal),
   delivery_ms: String(PHASE_MS.delivery), seller_bond: String(BOND),
 });
@@ -140,11 +140,11 @@ evidence.cleared = { status: round.status, total: round.total, lines: round.line
 console.error(`round ${round.status}: ${round.lines.length} lines, total ${round.total} yocto-wNEAR`);
 
 // 8. Delivery: each seller serves its lines; each buyer confirms what it received with a receipt hash.
-async function serve(buyerId, prompt) {
+async function serve(buyerId, prompt, MODEL) {
   if (!NEARAI) return { receipt: sha(JSON.stringify(["simulated", buyerId, prompt])), simulated: true };
   const response = await fetch("https://cloud-api.near.ai/v1/chat/completions", {
     method: "POST", headers: { Authorization: `Bearer ${NEARAI}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ model: MODEL, max_tokens: 64, messages: [{ role: "user", content: prompt }] }),
+    body: JSON.stringify({ model: MODEL, max_tokens: 300, messages: [{ role: "user", content: prompt }] }),
     signal: AbortSignal.timeout(60_000),
   });
   assert.ok(response.ok, `NEAR AI Cloud HTTP ${response.status}`);
@@ -155,7 +155,7 @@ async function serve(buyerId, prompt) {
       { headers: { Authorization: `Bearer ${NEARAI}` }, signal: AbortSignal.timeout(30_000) });
     if (signed.ok) signature = await signed.json();
   } catch {}
-  return { receipt: sha(JSON.stringify([completion, signature])), completionId: completion.id, signature, answer: completion.choices?.[0]?.message?.content?.slice(0, 120) };
+  return { receipt: sha(JSON.stringify([completion, signature])), model: MODEL, completionId: completion.id, signature, answer: completion.choices?.[0]?.message?.content?.slice(0, 120) };
 }
 const deliveries = [];
 for (const line of round.lines) {
@@ -163,10 +163,8 @@ for (const line of round.lines) {
   const units = plan[4] === "short" ? Math.floor(Number(line.quantity) / 2) : Number(line.quantity);
   const buyer = buyers.find((b) => b.accountId === line.buyer);
   if (!units) { evidence.steps.push({ step: "no-delivery", who: line.seller, buyer: line.buyer }); continue; }
-  const served = [];
-  for (let unit = 0; unit < units; unit++) {
-    served.push(await serve(line.buyer, `In one sentence, why do AI agents pool demand? (${line.buyer} unit ${unit + 1})`));
-  }
+  const served = await Promise.all(Array.from({ length: units }, (_, unit) =>
+    serve(line.buyer, `In one sentence, why do AI agents pool demand? (${line.buyer} unit ${unit + 1})`, plan[5])));
   // One confirmation per line: the receipt commits to every unit's receipt, in order.
   const receipt = sha(JSON.stringify(served.map((s) => s.receipt)));
   record("confirm-delivery", line.buyer, await call(buyer, exchange.accountId, "confirm_delivery", {
@@ -190,7 +188,7 @@ for (const account of [...buyers, ...sellers]) {
 const [exchangeKey] = (await provider.viewAccessKeyList({ accountId: exchange.accountId })).keys;
 record("lock-contract", exchange.accountId, await exchange.deleteKey(exchangeKey.public_key));
 evidence.round = await view("get_round", { round_id: String(roundId) });
-evidence.deliveries = deliveries.map(({ buyer, seller, receipt, completionId, answer, simulated }) => ({ buyer, seller, receipt, completionId, answer, simulated }));
+evidence.deliveries = deliveries.map(({ buyer, seller, model, receipt, completionId, signature, answer, simulated }) => ({ buyer, seller, model, receipt, completionId, signature, answer, simulated }));
 await mkdir("public", { recursive: true });
 await writeFile("public/exchange-testnet.json", JSON.stringify(evidence, null, 2));
 console.log(`exchange ${exchange.accountId}: round ${roundId} ${evidence.round.status}; evidence in public/exchange-testnet.json`);
