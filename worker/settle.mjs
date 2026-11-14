@@ -13,6 +13,7 @@ const MAX_CENTS = 200_000;           // $2,000 a payment
 const PER_IP_PER_HOUR = 8;
 const PER_DAY = 400;
 
+const near = yocto => { const digits = String(yocto).padStart(25, '0'), fraction = digits.slice(-24).replace(/0+$/, ''); return digits.slice(0, -24) + (fraction ? '.' + fraction : ''); };
 const json = (body, status, origin) => new Response(JSON.stringify(body), {
   status, headers: { 'content-type': 'application/json', ...cors(origin) },
 });
@@ -95,7 +96,7 @@ export default {
       const receipt = result.receipts[0];
       return json({
         status: receipt?.status ?? 'pending', transactionHash: receipt?.transactionHash ?? (await journal.read(scope))?.signed?.hash,
-        from: payer, to: payee, amountNear: (Number(amount) / 1e24).toString(), network: 'testnet',
+        from: payer, to: payee, amountNear: near(amount), network: 'testnet',
       }, 200, origin);
     } catch (error) {
       return json({ error: String(error?.message ?? error).slice(0, 300) }, 502, origin);

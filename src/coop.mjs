@@ -6,6 +6,7 @@ const $ = id => document.getElementById(id);
 const SVG = 'http://www.w3.org/2000/svg';
 const STORE = 'swarmkit-coop-v1';
 const SETTLE_URL = import.meta.env.VITE_SETTLE_URL || '';
+const PARENT = import.meta.env.VITE_PARENT_ACCOUNT || '';
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pause = ms => new Promise(r => setTimeout(r, reduced ? 0 : ms));
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -159,12 +160,12 @@ function renderPay(r) {
   if (!r) { $('pay').innerHTML = '<p class="empty">The settlement plan appears once the round clears.</p>'; $('pay-state').textContent = 'Settlement plan'; return; }
   const label = id => state.teams.find(t => t.id === id)?.label ?? state.providers.find(p => p.id === id)?.label ?? id;
   const sorted = [...r.payments].sort((a, b) => (b.buyerId === YOU) - (a.buyerId === YOU));
-  const rows = sorted.map(p => `<tr class="${p.buyerId === YOU ? 'is-you' : ''}"><th scope="row">${esc(label(p.buyerId))}</th><td>${esc(label(p.sellerId))}</td><td class="num">${usd(p.amount)}</td><td class="mono">${esc(p.buyerId)}.coop.testnet</td></tr>`).join('');
+  const rows = sorted.map(p => `<tr class="${p.buyerId === YOU ? 'is-you' : ''}"><th scope="row">${esc(label(p.buyerId))}</th><td>${esc(label(p.sellerId))}</td><td class="num">${usd(p.amount)}</td><td class="mono">${p.buyerId === YOU && PARENT ? `<a class="link" href="https://testnet.nearblocks.io/address/your-team.${esc(PARENT)}">your-team.${esc(PARENT)}</a>` : `${esc(p.buyerId)} <span class="sim">simulated</span>`}</td></tr>`).join('');
   const settle = SETTLE_URL
     ? '<button class="btn btn--primary" type="button" id="settle">Settle my share on NEAR testnet</button><p class="pay__note" id="settle-note">Pays your share from your team’s agent account to each provider’s on NEAR testnet. $1.00 here settles as 0.0001 testnet NEAR.</p>'
     : `<p class="pay__note">On this page the plan is settled in simulated dollars. The same SDK settlement flow paid all 20 shares of a 20-buyer GPU round on NEAR testnet, each one checked against RPC. <a class="link" href="./testnet.html">See those receipts</a></p>`;
   $('pay').innerHTML = `<p class="pay__lead"><b>${r.payments.length} payments</b>, one per team and provider pair, ${usd(r.total)} in total. Nobody pays for anyone else’s hours.</p>
-    <div class="table-scroll pay__table"><table><thead><tr><th scope="col">Team</th><th scope="col">Pays provider</th><th scope="col" class="num">Amount</th><th scope="col">Agent account</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="table-scroll pay__table"><table><thead><tr><th scope="col">Team</th><th scope="col">Pays provider</th><th scope="col" class="num">Amount</th><th scope="col">Payer agent account</th></tr></thead><tbody>${rows}</tbody></table></div>
     <div class="pay__actions">${settle}${r.transcript ? '<button class="btn btn--quiet" type="button" id="transcript">Download this week’s SDK transcript</button>' : ''}</div>`;
   $('pay-state').textContent = `Round ${r.roundId ?? '–'}`;
   $('transcript')?.addEventListener('click', () => {

@@ -6,6 +6,6 @@
   "main": "settle.mjs",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
-  "vars": { "PARENT_ACCOUNT": "" },
+  "vars": { "PARENT_ACCOUNT": "swarmkit-coop-1d194c7c.testnet" },
   "kv_namespaces": [{ "binding": "SETTLE_KV", "id": "d38397298f6443e0b12bea13710f1983" }]
 }

@@ -105,3 +105,4 @@
   #bids, .clear, .pay { padding-left: 16px; padding-right: 16px; }
 }
 .grid--below { align-items: start; }
+.sim { font: 500 11px var(--sans); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; margin-left: 4px; }
