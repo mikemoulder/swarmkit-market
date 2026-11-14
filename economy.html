@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SwarmKit Market: two linked agent markets</title>
+  <meta name="description" content="Nineteen agents trade GPU hours and inference in two linked sealed-bid markets. Cut the GPU supply and watch the shock travel to inference prices.">
+  <meta property="og:title" content="SwarmKit Market: a live two-market agent economy">
+  <meta property="og:description" content="GPU sellers, research labs, inference providers and apps clear every round through near-swarmkit.">
+  <meta name="theme-color" content="#eef0f3">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip" href="#live">Skip to the economy</a>
+  <header class="bar">
+    <div class="wrap bar__in">
+      <a class="logo" href="./"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><circle cx="16" cy="4" r="2.9"/><circle cx="23.5" cy="4.6" r="2.9"/><circle cx="8.5" cy="10" r="2.9"/><circle cx="23.5" cy="22" r="2.9"/><circle cx="8.5" cy="27.4" r="2.9"/><circle cx="16" cy="28" r="2.9"/></g><circle cx="16" cy="16" r="3.6" fill="#1f2de6"/></svg>SwarmKit <span>Market</span></a>
+      <nav aria-label="Market">
+        <a href="./">GPU co-op</a>
+        <a href="./economy.html" aria-current="page">Two-market economy</a>
+        <a href="./lab.html">Recovery lab</a>
+        <a href="./testnet.html">Testnet receipts</a>
+        <a href="https://mikemoulder.github.io/swarmkit-site/docs/">SDK docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="live" class="wrap">
+    <section class="intro" aria-labelledby="intro-h">
+      <div>
+        <p class="label">Built on near-swarmkit · simulated credits</p>
+        <h1 id="intro-h">19 agents trading across two linked markets</h1>
+        <p class="lead">GPU sellers sell hours to research labs and to inference providers. Providers turn those hours into inference and sell it to apps. Every round in both markets is a sealed-bid SwarmKit round. Cut the GPU supply and watch the shock travel.</p>
+      </div>
+      <div class="controls" role="group" aria-label="Economy controls">
+        <div class="controls__row">
+          <button id="play" class="btn btn--primary" type="button" aria-pressed="false">Play rounds</button>
+          <button id="step" class="btn" type="button">Run one round</button>
+          <button id="shock" class="btn btn--warn" type="button">Cut GPU supply</button>
+        </div>
+        <div class="controls__row controls__row--meta">
+          <label>Speed <select id="speed"><option value="2200">Slow</option><option value="1300" selected>Normal</option><option value="600">Fast</option></select></label>
+          <label>Seed <input id="seed" type="number" step="1" value="2026" inputmode="numeric"></label>
+          <button id="reset" class="btn btn--quiet" type="button">Start over</button>
+        </div>
+        <p id="status" class="status" role="status">Loading the SDK.</p>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="This round">
+      <div><span>Round</span><strong id="k-round">0</strong></div>
+      <div><span>GPU price, per hour</span><strong id="k-gpu">–</strong><em id="k-gpu-d"></em></div>
+      <div><span>Inference price, per batch</span><strong id="k-inf">–</strong><em id="k-inf-d"></em></div>
+      <div><span>Provider cost, per batch</span><strong id="k-cost">–</strong><em id="k-cost-d"></em></div>
+      <div><span>SDK rounds cleared</span><strong id="k-rounds">0</strong></div>
+      <div><span>Payments planned</span><strong id="k-pay">0</strong></div>
+    </section>
+
+    <div class="grid">
+      <section class="card card--flow" aria-labelledby="flow-h">
+        <header class="card__head"><h2 id="flow-h">Supply chain, this round</h2><span class="hint">Line width is volume<span class="hint--phone"> · scroll sideways</span></span></header>
+        <div id="flow" class="flow" role="img" aria-label="GPU sellers supply the GPU market, which supplies labs and inference providers; providers supply the inference market, which supplies apps."></div>
+      </section>
+
+      <section class="card card--charts" aria-labelledby="charts-h">
+        <header class="card__head"><h2 id="charts-h">Prices over rounds</h2><span class="hint"><i class="swatch swatch--shock"></i>Supply shock</span></header>
+        <div class="chart" id="chart-gpu"></div>
+        <div class="chart" id="chart-inf"></div>
+        <details class="numbers"><summary>Show the numbers</summary><div id="price-table" class="table-scroll"></div></details>
+      </section>
+
+      <section class="card card--feed" aria-labelledby="feed-h">
+        <header class="card__head"><h2 id="feed-h">What the agents decided</h2>
+          <div class="chips" role="group" aria-label="Filter decisions">
+            <button type="button" data-feed="all" aria-pressed="true">All</button>
+            <button type="button" data-feed="gpu" aria-pressed="false">GPU</button>
+            <button type="button" data-feed="inference" aria-pressed="false">Inference</button>
+            <button type="button" data-feed="coordinator" aria-pressed="false">Coordinator</button>
+          </div>
+        </header>
+        <ol id="feed" class="feed" aria-live="off"></ol>
+      </section>
+
+      <section class="card card--round" aria-labelledby="round-h">
+        <header class="card__head"><h2 id="round-h">Latest sealed rounds</h2>
+          <div class="chips" role="group" aria-label="Market">
+            <button type="button" data-round="gpu" aria-pressed="true">GPU</button>
+            <button type="button" data-round="inference" aria-pressed="false">Inference</button>
+          </div>
+        </header>
+        <div id="round" class="round"></div>
+      </section>
+
+      <section class="card card--agents" aria-labelledby="agents-h">
+        <header class="card__head"><h2 id="agents-h">The 19 agents and their strategies</h2>
+          <div class="chips" role="group" aria-label="Filter agents">
+            <button type="button" data-group="all" aria-pressed="true">All</button>
+            <button type="button" data-group="gpuSellers" aria-pressed="false">GPU sellers</button>
+            <button type="button" data-group="labs" aria-pressed="false">Labs</button>
+            <button type="button" data-group="providers" aria-pressed="false">Providers</button>
+            <button type="button" data-group="apps" aria-pressed="false">Apps</button>
+          </div>
+        </header>
+        <div id="agents" class="table-scroll"></div>
+      </section>
+
+      <section class="card card--proof" aria-labelledby="proof-h">
+        <header class="card__head"><h2 id="proof-h">From these rounds to real payments</h2></header>
+        <div class="proof">
+          <p>Each round here produces a SwarmKit settlement plan: one payment per buyer and seller pair. On this page they are settled in simulated credits. The same plan format has been paid on NEAR testnet: <strong>22 of 22 transfers final</strong>, every one checked against RPC.</p>
+          <div class="proof__links"><a class="btn btn--primary" href="./testnet.html">See the testnet receipts</a><a class="btn" href="./lab.html">Crash a settlement in the lab</a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot wrap">
+    <span>© 2026 SwarmKit · MIT or Apache-2.0</span>
+    <nav aria-label="Footer"><a href="https://mikemoulder.github.io/swarmkit-site/">SwarmKit site</a><a href="https://github.com/mikemoulder/swarmkit">SDK source</a><a href="https://github.com/mikemoulder/swarmkit-market">Market source</a></nav>
+  </footer>
+  <div id="tip" class="tip" role="tooltip" hidden></div>
+  <script type="module" src="./src/live.mjs"></script>
+</body>
+</html>
